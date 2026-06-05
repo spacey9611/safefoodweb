@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag("consent", "default", {
+        "ad_storage": "denied",
+        "ad_user_data": "denied",
+        "ad_personalization": "denied",
+        "analytics_storage": "denied",
+        "wait_for_update": 500
+      });
+      dataLayer.push({ "event": "default_consent_set" });
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N69BCEQGQ2"></script>
+    <script>
+      gtag('js', new Date());
+      gtag('config', 'G-N69BCEQGQ2');
+    </script>
+    <script>
+      try {
+        if (localStorage.getItem("fs_cookie_accepted_v1") === "true") {
+          document.documentElement.classList.add("cookies-accepted");
+        }
+      } catch (e) {}
+    </script>
+
+    <title>Food Temperature Danger Zone Checker (Australia) 2026</title>
+    <meta name="description" content="Free interactive food temperature danger zone checker for Australia: slide to any temperature for safe/danger status, cook temps and the 2-hour/4-hour rule.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Food Safety Practice AU">
+    <link rel="canonical" href="https://food-safety-practice-test-au.com/temperature-danger-zone-checker.html">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://food-safety-practice-test-au.com/temperature-danger-zone-checker.html">
+    <meta property="og:title" content="Food Temperature Danger Zone Checker | Australia">
+    <meta property="og:description" content="Interactive danger zone checker, safe cooking temperatures, and the 2-hour/4-hour rule calculator for Australian food handlers.">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/style.css?v=9">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the temperature danger zone in Australia?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The temperature danger zone is 5 degrees C to 60 degrees C. Bacteria multiply fastest in this range, so potentially hazardous food should be kept below 5 degrees C or above 60 degrees C." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the 2-hour/4-hour rule?",
+      "acceptedAnswer": { "@type": "Answer", "text": "If potentially hazardous food has been in the danger zone for under 2 hours, refrigerate it or use it. Between 2 and 4 hours, use it immediately. Over 4 hours total, throw it out." }
+    },
+    {
+      "@type": "Question",
+      "name": "What temperature should I cook chicken to?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Cook poultry and minced meat to 75 degrees C in the centre. Use a clean probe thermometer to check the thickest part." }
+    },
+    {
+      "@type": "Question",
+      "name": "What temperature should a fridge be in a food business?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Cold food must be stored at 5 degrees C or below. Freezers should run at minus 15 degrees C or colder." }
+    }
+  ]
+}
+    </script>
+    <meta property="og:image" content="https://food-safety-practice-test-au.com/og-default.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://food-safety-practice-test-au.com/og-default.png">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container site-header__top">
+            <a href="/" class="site-brand">
+                <span class="site-brand__mark" aria-hidden="true">AU</span>
+                <span class="site-brand__text">
+                    <span class="site-brand__title">Food Safety Practice Test</span>
+                    <span class="site-brand__tagline">Free SITXFSA005 practice · 650 questions</span>
+                </span>
+            </a>
+            <button type="button" class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="site-nav-drawer">Menu</button>
+            <div class="site-header__drawer" id="site-nav-drawer">
+                <div class="site-header__drawer-inner">
+                    <nav class="secondary-nav" aria-label="Site navigation">
+                <a href="/" class="nav-link">Practice Test</a>
+                <a href="/guide.html" class="nav-link">Study Guide</a>
+                <a href="/temperature-danger-zone-checker.html" class="nav-link nav-link--active">Danger Zone Tool</a>
+                <a href="/tips.html" class="nav-link">Exam Tips</a>
+                <a href="/find-a-course.html" class="nav-link">Find a Course</a>
+                <a href="/blog/" class="nav-link">Blog</a>
+                <a href="/flashcards.html" class="nav-link">Flashcards</a>
+                <a href="/glossary.html" class="nav-link">Glossary</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="container site-header__states-wrap">
+            <nav class="state-selector" aria-label="State selection">
+                <a href="/food-safety-nsw.html" class="state-link" title="Food Safety Practice Test NSW">NSW</a>
+                <a href="/food-safety-vic.html" class="state-link" title="Food Safety Practice Test VIC">VIC</a>
+                <a href="/food-safety-qld.html" class="state-link" title="Food Safety Practice Test QLD">QLD</a>
+                <a href="/food-safety-wa.html" class="state-link" title="Food Safety Practice Test WA">WA</a>
+                <a href="/food-safety-sa.html" class="state-link" title="Food Safety Practice Test SA">SA</a>
+                <a href="/food-safety-act.html" class="state-link" title="Food Safety Practice Test ACT">ACT</a>
+                <a href="/food-safety-nt.html" class="state-link" title="Food Safety Practice Test NT">NT</a>
+                <a href="/food-safety-tas.html" class="state-link" title="Food Safety Practice Test TAS">TAS</a>
+            </nav>
+            <div class="site-header__tools font-resize-toolbar" aria-label="Text size controls" role="group">
+                <span class="font-resize-toolbar__label">Text size</span>
+                <button type="button" class="font-resize-btn" id="font-decrease" aria-label="Decrease text size" title="Smaller text">A−</button>
+                <button type="button" class="font-resize-btn" id="font-increase" aria-label="Increase text size" title="Larger text">A+</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="home-editorial-hero" aria-labelledby="tool-hero-title">
+        <div class="container home-editorial-hero__inner">
+            <p class="home-editorial-hero__badge">Free interactive tool · No sign up</p>
+            <h1 id="tool-hero-title" class="home-editorial-hero__title">Food Temperature<br><span class="home-editorial-hero__accent">Danger Zone Checker</span></h1>
+            <p class="home-editorial-hero__meta">Drag the slider · Check safe cooking temps · Use the 2-hour/4-hour calculator</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <article class="content-page">
+            <div class="tool-wrap">
+                <div class="tool-card">
+                    <h3>Is this temperature safe?</h3>
+                    <p class="tool-advice" style="margin-top:2px;">Drag the slider to any food temperature to see whether it is safe or in the danger zone.</p>
+                    <div class="tool-readout">
+                        <span class="tool-temp" id="temp-display">25°C</span>
+                        <span class="tool-status tool-status--danger" id="temp-status">Danger zone</span>
+                    </div>
+                    <input type="range" min="-20" max="100" value="25" step="1" class="tool-slider" id="temp-slider" aria-label="Food temperature in degrees Celsius">
+                    <div class="thermo-wrap" style="margin-top:8px;">
+                        <div class="thermo" aria-hidden="true">
+                            <div class="thermo-zone tz-hot">60°C+<small>Hot-hold SAFE</small></div>
+                            <div class="thermo-zone tz-danger">DANGER<small>5–60°C</small></div>
+                            <div class="thermo-zone tz-safe">&lt;5°C<small>Chilled SAFE</small></div>
+                        </div>
+                        <div class="thermo-legend">
+                            <p class="tool-advice" id="temp-advice" style="margin-top:0;">At 25°C food is in the danger zone — bacteria multiply rapidly. Keep potentially hazardous food below 5°C or above 60°C.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <h3>Safe cooking &amp; holding temperatures</h3>
+                    <table class="cook-table">
+                        <thead><tr><th>Food / step</th><th>Target</th></tr></thead>
+                        <tbody>
+                            <tr><td>Poultry (chicken, turkey, duck)</td><td class="temp-val">75°C</td></tr>
+                            <tr><td>Minced meat, sausages, rolled roasts</td><td class="temp-val">75°C</td></tr>
+                            <tr><td>Reheating cooked food</td><td class="temp-val">≥70°C</td></tr>
+                            <tr><td>Hot holding (display/service)</td><td class="temp-val">≥60°C</td></tr>
+                            <tr><td>Cold storage (fridge)</td><td class="temp-val">≤5°C</td></tr>
+                            <tr><td>Frozen storage (freezer)</td><td class="temp-val">≤−15°C</td></tr>
+                            <tr><td>Two-stage cooling: 60→21°C</td><td class="temp-val">≤2 h</td></tr>
+                            <tr><td>Two-stage cooling: 21→5°C</td><td class="temp-val">≤4 h</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="tool-card" style="margin-top:18px;">
+                <h3>2-hour / 4-hour rule calculator</h3>
+                <p class="tool-advice" style="margin-top:2px;">How long has the potentially hazardous food been sitting in the danger zone (5°C–60°C) in total?</p>
+                <div class="rule-tool">
+                    <input type="number" id="rule-hours" min="0" max="24" step="0.5" value="1.5" aria-label="Total hours in the danger zone">
+                    <span>hours in the danger zone</span>
+                    <span class="rule-result rule-result--ok" id="rule-result">Refrigerate or use</span>
+                </div>
+                <p class="tool-advice" id="rule-advice">Under 2 hours: the food is safe to refrigerate and use later, or use now.</p>
+            </div>
+
+            <div class="ad-slot" data-ad-slot="tool-incontent" role="complementary" aria-label="Advertisement"><span class="ad-slot__label">Advertisement</span></div>
+
+            <div class="affiliate-card" style="margin-top:6px;">
+                <p class="affiliate-eyebrow">Know your temps? Test yourself</p>
+                <h3 class="affiliate-heading">Try the free food safety practice test</h3>
+                <p class="affiliate-text">Temperature control is the single most-tested topic. Try 650 exam-style questions with instant feedback. No sign-up required.</p>
+                <a href="/" class="btn btn-primary">Start the free practice test &rarr;</a>
+            </div>
+        </article>
+    </main>
+
+    <article class="seo-text">
+        <div class="container">
+            <h2>Understanding the Food Temperature Danger Zone</h2>
+            <p>In Australia, the <strong>temperature danger zone is 5°C to 60°C</strong>. Within this range, bacteria such as <em>Salmonella</em>, <em>E. coli</em> and <em>Listeria</em> multiply rapidly. Potentially hazardous foods — meat, poultry, dairy, eggs, seafood, cooked rice and pasta, and prepared salads — must be kept <strong>below 5°C</strong> or <strong>above 60°C</strong> to stay safe.</p>
+            <h3>The 2-hour / 4-hour rule explained</h3>
+            <p>The 2-hour/4-hour rule tells you what to do with potentially hazardous food that has spent time in the danger zone:</p>
+            <ul>
+                <li><strong>Under 2 hours total:</strong> refrigerate and use later, or use now.</li>
+                <li><strong>Between 2 and 4 hours total:</strong> use immediately — do not put it back in the fridge.</li>
+                <li><strong>Over 4 hours total:</strong> throw it out.</li>
+            </ul>
+            <p>The time is cumulative across the food's whole life — every period it spends between 5°C and 60°C adds up.</p>
+            <h3>Safe cooking temperatures</h3>
+            <p>Cook poultry and minced meat to <strong>75°C</strong> in the centre, reheat cooked food to at least <strong>70°C</strong>, and keep hot food on display at <strong>60°C or above</strong>. Always use a clean, calibrated probe thermometer in the thickest part of the food.</p>
+            <h3>Frequently Asked Questions</h3>
+            <dl>
+                <dt class="faq-question" tabindex="0" aria-expanded="false"><span>What is the temperature danger zone in Australia?</span><span class="faq-toggle">+</span></dt>
+                <dd class="faq-answer" hidden>The temperature danger zone is 5°C to 60°C. Bacteria multiply fastest in this range, so potentially hazardous food should be kept below 5°C or above 60°C.</dd>
+                <dt class="faq-question" tabindex="0" aria-expanded="false"><span>What is the 2-hour/4-hour rule?</span><span class="faq-toggle">+</span></dt>
+                <dd class="faq-answer" hidden>Under 2 hours in the danger zone: refrigerate or use. Between 2 and 4 hours: use immediately. Over 4 hours total: throw it out.</dd>
+                <dt class="faq-question" tabindex="0" aria-expanded="false"><span>What temperature should I cook chicken to?</span><span class="faq-toggle">+</span></dt>
+                <dd class="faq-answer" hidden>Cook poultry and minced meat to 75°C in the centre. Use a clean probe thermometer to check the thickest part.</dd>
+                <dt class="faq-question" tabindex="0" aria-expanded="false"><span>What temperature should a fridge be in a food business?</span><span class="faq-toggle">+</span></dt>
+                <dd class="faq-answer" hidden>Cold food must be stored at 5°C or below. Freezers should run at −15°C or colder.</dd>
+            </dl>
+            <p style="margin-top:14px;">Read more: <a href="/blog/temperature-danger-zone-australia-guide/">Temperature Danger Zone Australia: Complete Guide</a> &middot; <a href="/topic-temperature.html">Temperature &amp; danger zone practice questions</a> &middot; <a href="/guide.html">Full study guide</a></p>
+        </div>
+    <p class="byline" data-byline style="color:var(--muted);font-size:.85rem;border-top:1px solid var(--line);margin-top:22px;padding-top:14px;">Written and reviewed by the Food Safety Practice AU editorial team. Last reviewed June 2026. Based on the <a href="https://www.foodstandards.gov.au/" target="_blank" rel="noopener">Food Standards Code (FSANZ)</a> and Australian state/territory food authorities. General guidance only &mdash; not official certification.</p>
+        </article>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Food Safety Practice AU</p>
+            <nav class="footer-links">
+                <a href="/about.html">About</a>
+                <span class="separator">|</span>
+                <a href="/terms.html">Terms of Use</a>
+                <span class="separator">|</span>
+                <a href="/legal.html#privacy">Privacy Policy</a>
+                <span class="separator">|</span>
+                <a href="/legal.html#legal">Legal Notice</a>
+                <span class="separator">|</span>
+                <a href="/legal.html#contact">Contact Us</a>
+            </nav>
+            <p class="footer-disclaimer">We may earn a commission if you purchase through links on this site.</p>
+            <p class="footer-disclaimer">Not affiliated with FSANZ, state health departments, or the Australian Government. This tool is general guidance only — always follow your business's food safety program.</p>
+        </div>
+    </footer>
+
+    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie notice">
+        <div class="cookie-banner__content">
+            <p>This site uses cookies and similar technologies to improve your experience and support analytics and advertising. By continuing to use this site, you agree to our <a href="/legal.html#privacy">Privacy Policy</a>.</p>
+            <div class="cookie-banner__actions">
+                <button id="cookie-accept" class="btn btn-primary cookie-btn">Accept</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="faq-accordion.js" defer></script>
+        <script src="cookie-consent.js" defer></script>
+    <script src="site-ui.js" defer></script>
+    <script>
+    (function () {
+        var slider = document.getElementById('temp-slider');
+        var disp = document.getElementById('temp-display');
+        var status = document.getElementById('temp-status');
+        var advice = document.getElementById('temp-advice');
+        function updateTemp() {
+            var t = parseInt(slider.value, 10);
+            disp.textContent = t + '°C';
+            var cls, label, msg;
+            if (t < 5) {
+                cls = 'tool-status--safe'; label = 'Chilled — safe';
+                msg = 'At ' + t + '°C food is in safe cold storage. Keep fridges at 5°C or below and freezers at −15°C or colder.';
+            } else if (t <= 60) {
+                cls = 'tool-status--danger'; label = 'Danger zone';
+                msg = 'At ' + t + '°C food is in the danger zone (5°C–60°C) — bacteria multiply rapidly. Apply the 2-hour/4-hour rule and move it below 5°C or above 60°C.';
+            } else {
+                cls = 'tool-status--hot'; label = 'Hot — safe';
+                msg = 'At ' + t + '°C food is safely hot. Keep hot-held food at 60°C or above; cook poultry and mince to 75°C in the centre.';
+            }
+            status.className = 'tool-status ' + cls;
+            status.textContent = label;
+            advice.textContent = msg;
+        }
+        if (slider) { slider.addEventListener('input', updateTemp); updateTemp(); }
+
+        var hours = document.getElementById('rule-hours');
+        var rr = document.getElementById('rule-result');
+        var ra = document.getElementById('rule-advice');
+        function updateRule() {
+            var h = parseFloat(hours.value);
+            if (isNaN(h) || h < 0) { rr.className = 'rule-result rule-result--ok'; rr.textContent = '—'; ra.textContent = 'Enter the total hours the food has spent between 5°C and 60°C.'; return; }
+            if (h < 2) { rr.className = 'rule-result rule-result--ok'; rr.textContent = 'Refrigerate or use'; ra.textContent = 'Under 2 hours: the food is safe to refrigerate and use later, or use now.'; }
+            else if (h <= 4) { rr.className = 'rule-result rule-result--use'; rr.textContent = 'Use immediately'; ra.textContent = 'Between 2 and 4 hours: use the food now — do not return it to the fridge.'; }
+            else { rr.className = 'rule-result rule-result--bin'; rr.textContent = 'Throw it out'; ra.textContent = 'Over 4 hours total in the danger zone: discard the food. It is no longer safe.'; }
+        }
+        if (hours) { hours.addEventListener('input', updateRule); updateRule(); }
+    })();
+    </script>
+</body>
+</html>

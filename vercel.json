@@ -1,0 +1,35 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": false,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.food-safety-practice-test-au.com" }],
+      "destination": "https://food-safety-practice-test-au.com/:path*",
+      "permanent": true
+    },
+    { "source": "/index.html", "destination": "/", "permanent": true },
+    { "source": "/food-safety-practice-test-au.html", "destination": "/", "permanent": true },
+    { "source": "/blog/index.html", "destination": "/blog", "permanent": true },
+    { "source": "/blog/:slug/index.html", "destination": "/blog/:slug", "permanent": true },
+    { "source": "/blog/:slug/", "destination": "/blog/:slug", "permanent": true },
+    { "source": "/blog/", "destination": "/blog", "permanent": true },
+    { "source": "/food-safety-nsw", "destination": "/food-safety-nsw.html", "permanent": true },
+    { "source": "/food-safety-vic", "destination": "/food-safety-vic.html", "permanent": true },
+    { "source": "/food-safety-qld", "destination": "/food-safety-qld.html", "permanent": true },
+    { "source": "/food-safety-wa", "destination": "/food-safety-wa.html", "permanent": true },
+    { "source": "/food-safety-sa", "destination": "/food-safety-sa.html", "permanent": true },
+    { "source": "/food-safety-act", "destination": "/food-safety-act.html", "permanent": true },
+    { "source": "/food-safety-nt", "destination": "/food-safety-nt.html", "permanent": true },
+    { "source": "/food-safety-tas", "destination": "/food-safety-tas.html", "permanent": true },
+    { "source": "/", "has": [{ "type": "query", "key": "state", "value": "nsw" }], "destination": "/food-safety-nsw.html", "permanent": true },
+    { "source": "/", "has": [{ "type": "query", "key": "state", "value": "vic" }], "destination": "/food-safety-vic.html", "permanent": true },
+    { "source": "/", "has": [{ "type": "query", "key": "state", "value": "qld" }], "destination": "/food-safety-qld.html", "permanent": true },
+    { "source": "/", "has": [{ "type": "query", "key": "state", "value": "wa" }], "destination": "/food-safety-wa.html", "permanent": true },
+    { "source": "/", "has": [{ "type": "query", "key": "state", "value": "sa" }], "destination": "/food-safety-sa.html", "permanent": true },
+    { "source": "/", "has": [{ "type": "query", "key": "state", "value": "act" }], "destination": "/food-safety-act.html", "permanent": true },
+    { "source": "/", "has": [{ "type": "query", "key": "state", "value": "nt" }], "destination": "/food-safety-nt.html", "permanent": true },
+    { "source": "/", "has": [{ "type": "query", "key": "state", "value": "tas" }], "destination": "/food-safety-tas.html", "permanent": true }
+  ]
+}

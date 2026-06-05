@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://food-safety-practice-test-au.com/sitemap.xml
