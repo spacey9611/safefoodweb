@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 360" role="img" aria-label="The priority food allergens that must be declared in Australia: peanuts, tree nuts, milk, egg, wheat or gluten, soy, sesame, fish, crustacea and molluscs, lupin, plus added sulphites">
+  <style>
+    .t{font-family:Arial,Helvetica,sans-serif;}
+    .title{font-size:18px;fill:#1A1F1C;font-weight:700;}
+    .cell{font-size:14px;fill:#1A1F1C;font-weight:700;}
+    .cap{font-size:11px;fill:#5C6760;}
+    .em{font-size:22px;}
+  </style>
+  <rect width="560" height="360" fill="#FFFFFF"/>
+  <text x="24" y="34" class="t title">Priority Allergens to Declare (Australia)</text>
+  <g>
+    <!-- row helper: 11 chips in a grid -->
+    <!-- col x: 24, 158, 292, 426 ; width 122 -->
+    <!-- row y: 56, 116, 176, 236 ; height 48 -->
+    <!-- 1 -->
+    <rect x="24"  y="56"  width="158" height="48" rx="10" fill="#ECFDF5" stroke="#A7F3D0"/>
+    <text x="40" y="78" class="t em">&#129372;</text><text x="74" y="85" class="t cell">Peanuts</text>
+    <rect x="200" y="56" width="158" height="48" rx="10" fill="#ECFDF5" stroke="#A7F3D0"/>
+    <text x="216" y="78" class="t em">&#127792;</text><text x="250" y="85" class="t cell">Tree nuts</text>
+    <rect x="376" y="56" width="160" height="48" rx="10" fill="#ECFDF5" stroke="#A7F3D0"/>
+    <text x="392" y="78" class="t em">&#129371;</text><text x="426" y="85" class="t cell">Milk</text>
+
+    <rect x="24"  y="116" width="158" height="48" rx="10" fill="#ECFDF5" stroke="#A7F3D0"/>
+    <text x="40" y="138" class="t em">&#129370;</text><text x="74" y="145" class="t cell">Egg</text>
+    <rect x="200" y="116" width="158" height="48" rx="10" fill="#ECFDF5" stroke="#A7F3D0"/>
+    <text x="216" y="138" class="t em">&#127806;</text><text x="250" y="145" class="t cell">Wheat / gluten</text>
+    <rect x="376" y="116" width="160" height="48" rx="10" fill="#ECFDF5" stroke="#A7F3D0"/>
+    <text x="392" y="138" class="t em">&#129528;</text><text x="426" y="145" class="t cell">Soy</text>
+
+    <rect x="24"  y="176" width="158" height="48" rx="10" fill="#ECFDF5" stroke="#A7F3D0"/>
+    <text x="40" y="198" class="t em">&#127807;</text><text x="74" y="205" class="t cell">Sesame</text>
+    <rect x="200" y="176" width="158" height="48" rx="10" fill="#ECFDF5" stroke="#A7F3D0"/>
+    <text x="216" y="198" class="t em">&#128031;</text><text x="250" y="205" class="t cell">Fish</text>
+    <rect x="376" y="176" width="160" height="48" rx="10" fill="#ECFDF5" stroke="#A7F3D0"/>
+    <text x="392" y="198" class="t em">&#129424;</text><text x="426" y="205" class="t cell">Crustacea</text>
+
+    <rect x="24"  y="236" width="158" height="48" rx="10" fill="#ECFDF5" stroke="#A7F3D0"/>
+    <text x="40" y="258" class="t em">&#129529;</text><text x="74" y="265" class="t cell">Lupin</text>
+    <rect x="200" y="236" width="158" height="48" rx="10" fill="#ECFDF5" stroke="#A7F3D0"/>
+    <text x="216" y="258" class="t em">&#129371;</text><text x="250" y="265" class="t cell">Molluscs</text>
+    <rect x="376" y="236" width="160" height="48" rx="10" fill="#FEF3C7" stroke="#FCD34D"/>
+    <text x="392" y="258" class="t em">&#129371;</text><text x="420" y="265" class="t cell">Sulphites*</text>
+  </g>
+  <text x="24" y="312" class="t cap">*Added sulphites must also be declared. Allergens cannot be &#8220;cooked out&#8221; &#8212; even traces can cause anaphylaxis.</text>
+  <text x="24" y="334" class="t cap">food-safety-practice-test-au.com &#183; aligned with the Food Standards Code</text>
+</svg>

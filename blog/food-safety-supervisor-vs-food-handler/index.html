@@ -28,7 +28,7 @@
         }
       } catch (e) {}
     </script>
-    <title>Food Safety Supervisor vs Food Handler | Food Safety AU</title>
+    <title>Food Safety Supervisor vs Food Handler | AU</title>
     <meta name="description" content="SITXFSA005 vs SITXFSA006 explained: who needs which certificate in Australia, Standard 3.2.2A changes, and how to prepare with free practice.">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Food Safety Practice AU">
@@ -43,7 +43,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://food-safety-practice-test-au.com/og-default.png">
     <link rel="icon" type="image/x-icon" href="../../favicon.ico">
-    <link rel="stylesheet" href="../../style.css?v=7">
+    <link rel="stylesheet" href="../../style.css?v=13">
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -150,7 +150,7 @@
                 <a href="../../temperature-danger-zone-checker.html" class="nav-link">Danger Zone Tool</a>
                 <a href="../../tips.html" class="nav-link">Exam Tips</a>
                 <a href="../../find-a-course.html" class="nav-link">Find a Course</a>
-                <a href="../../blog/" class="nav-link nav-link--active">Blog</a>
+                <a href="../../blog" class="nav-link nav-link--active">Blog</a>
                 <a href="../../flashcards.html" class="nav-link">Flashcards</a>
                 <a href="../../glossary.html" class="nav-link">Glossary</a>
                     </nav>
@@ -208,7 +208,7 @@
             <p>Exact requirements can vary slightly by state regulator. For state-specific context see our pages for <a href="../../food-safety-nsw.html">NSW</a>, <a href="../../food-safety-vic.html">VIC</a>, and <a href="../../food-safety-qld.html">QLD</a>, or read <a href="../food-safety-certificate-cost-australia-by-state/">certificate costs by state</a>.</p>
             <h2>December 2023: Standard 3.2.2A expansion</h2>
             <p>From December 2023, <strong>Standard 3.2.2A</strong> extended food handler training requirements to more sectors, including <strong>schools, childcare, aged care, and charities</strong> that serve food. Even if you are not in a traditional restaurant, you may now need documented food handler training where you did not before.</p>
-            <p>Read the full breakdown: <a href="../food-safety-training-aged-care-childcare-2023/">Food safety training for aged care, childcare &amp; schools</a>.</p>
+            <p>Read the full breakdown: <a href="../food-safety-training-aged-care-childcare/">Food safety training for aged care, childcare &amp; schools</a>.</p>
             <h2>Which one do you need?</h2>
             <table class="cook-table">
                 <thead><tr><th>Your situation</th><th>Usually need</th></tr></thead>
@@ -261,11 +261,16 @@
         </div>
     </footer>
 
-    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie notice">
+    <div id="cookie-banner-backdrop" class="cookie-banner-backdrop" aria-hidden="true"></div>
+    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-modal="true" aria-labelledby="cookie-banner-title" aria-live="polite">
         <div class="cookie-banner__content">
-            <p>This site uses cookies and similar technologies to improve your experience and support analytics and advertising. By continuing to use this site, you agree to our <a href="../../legal.html#privacy">Privacy Policy</a>.</p>
+            <div class="cookie-banner__copy">
+                <p id="cookie-banner-title"><strong>Accept cookies to continue</strong></p>
+                <p class="cookie-banner__sub">We use cookies to keep the site running and to understand how people use our free practice tests. Tap accept to start studying. <a href="../../legal.html#privacy">Privacy Policy</a></p>
+            </div>
             <div class="cookie-banner__actions">
-                <button id="cookie-accept" class="btn btn-primary cookie-btn">Accept</button>
+                <button type="button" id="cookie-accept" class="btn btn-primary cookie-btn cookie-btn--accept">Accept &amp; continue</button>
+                <button type="button" id="cookie-deny" class="cookie-banner__reject">Essential cookies only</button>
             </div>
         </div>
     </div>

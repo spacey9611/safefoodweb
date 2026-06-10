@@ -21,12 +21,24 @@
       gtag('js', new Date());
       gtag('config', 'G-N69BCEQGQ2');
     </script>
-    <script>
-      try {
-        if (localStorage.getItem("fs_cookie_accepted_v1") === "true") {
-          document.documentElement.classList.add("cookies-accepted");
+<script>
+      (function () {
+        try {
+          var c = localStorage.getItem("fs_cookie_consent_v2");
+          if (c === "accepted" || c === "denied") {
+            document.documentElement.classList.add("cookies-resolved");
+            if (c === "accepted") document.documentElement.classList.add("cookies-accepted");
+            return;
+          }
+          if (localStorage.getItem("fs_cookie_accepted_v1") === "true") {
+            document.documentElement.classList.add("cookies-resolved", "cookies-accepted");
+            return;
+          }
+          document.documentElement.classList.add("cookie-banner-open");
+        } catch (e) {
+          document.documentElement.classList.add("cookie-banner-open");
         }
-      } catch (e) {}
+      })();
     </script>
 
     <title>Find Food Safety Course Australia 2026 | SITXFSA005 & FSS</title>
@@ -39,7 +51,7 @@
     <meta property="og:title" content="Find Food Safety Course Australia 2026 | SITXFSA005 & FSS">
     <meta property="og:description" content="Compare accredited food safety courses in Australia. SITXFSA005 food handler and SITXFSA006 FSS training from $85.">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="stylesheet" href="/style.css?v=9">
+    <link rel="stylesheet" href="/style.css?v=13">
 
     <meta property="og:image" content="https://food-safety-practice-test-au.com/og-default.png">
     <meta property="og:image:width" content="1200">
@@ -57,6 +69,26 @@
         {"@type":"Question","name":"How long does the course take?","acceptedAnswer":{"@type":"Answer","text":"Many online food handler courses take only a few hours as they are self-paced."}}
       ]
     }
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://food-safety-practice-test-au.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Find a Course",
+      "item": "https://food-safety-practice-test-au.com/find-a-course.html"
+    }
+  ]
+}
     </script>
 </head>
 <body>
@@ -78,7 +110,7 @@
                 <a href="/temperature-danger-zone-checker.html" class="nav-link">Danger Zone Tool</a>
                 <a href="/tips.html" class="nav-link">Exam Tips</a>
                 <a href="/find-a-course.html" class="nav-link nav-link--active">Find a Course</a>
-                <a href="/blog/" class="nav-link">Blog</a>
+                <a href="/blog" class="nav-link">Blog</a>
                 <a href="/flashcards.html" class="nav-link">Flashcards</a>
                 <a href="/glossary.html" class="nav-link">Glossary</a>
                     </nav>
@@ -103,28 +135,61 @@
             </div>
         </div>
     </header>
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><span aria-current="page">Find a Course</span></li></ol></nav>
+    </div>
 
     <main class="container">
         <article class="content-page">
             <h1>Find a Food Safety Course</h1>
-            <p>Practice tests prepare you for the knowledge component, but official <strong>SITXFSA005</strong> (food handler) or <strong>SITXFSA006</strong> (Food Safety Supervisor) certificates must be issued by a registered training organisation (RTO).</p>
+            <p class="lead">Our practice test gets you ready for the knowledge component for free, but the official <strong>SITXFSA005</strong> (food handler) and <strong>SITXFSA006</strong> (Food Safety Supervisor) certificates can only be issued by a Registered Training Organisation (RTO). This page explains how to choose the right accredited course, what you should pay, and how the main Australian providers compare &mdash; so you don't overpay or accidentally buy a certificate that isn't recognised where you work.</p>
+            <p>The smart order is: practise here until you're scoring 80%+, then enrol in an accredited course. Because most online food handler courses are self-paced and largely assessment-based, arriving already prepared often means you finish in a single short sitting.</p>
+
             <section class="guide-section">
-                <h2>Popular accredited providers</h2>
-                <ul><li><a href="https://www.foodsafety.com.au/" target="_blank" rel="sponsored noopener">Australian Institute of Food Safety (AIFS)</a> — typical price $199–$230</li>
-<li><a href="https://www.cleartowork.com.au/" target="_blank" rel="sponsored noopener">Clear To Work</a> — typical price $86–$125</li>
-<li><a href="https://www.allenstraining.com.au/" target="_blank" rel="sponsored noopener">Allens Training</a> — typical price $85–$110</li>
-<li><a href="https://clubtraining.com.au/" target="_blank" rel="sponsored noopener">Club Training Australia</a> — typical price $95–$120</li></ul>
+                <h2>Compare accredited providers</h2>
+                <p>Prices and formats below are typical guides and change over time &mdash; always confirm the current price, the exact unit code, and that the certificate is recognised in your state before you pay. Every provider listed delivers nationally recognised training through an RTO; verify any RTO on <a href="https://training.gov.au/" target="_blank" rel="noopener">training.gov.au</a>.</p>
+                <div class="table-scroll">
+                <table class="cook-table">
+                    <thead>
+                        <tr><th>Provider</th><th>Typical price</th><th>Delivery</th><th>Units offered</th><th>Best for</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><a href="https://www.foodsafety.com.au/" target="_blank" rel="sponsored noopener">Australian Institute of Food Safety (AIFS)</a></td><td class="temp-val">$199&ndash;$230</td><td>100% online, self-paced</td><td>Food Handler &amp; FSS</td><td>Brand recognition, membership extras</td></tr>
+                        <tr><td><a href="https://www.cleartowork.com.au/" target="_blank" rel="sponsored noopener">Clear To Work</a></td><td class="temp-val">$86&ndash;$125</td><td>100% online, self-paced</td><td>Food Handler &amp; FSS</td><td>Lower-cost FSS certificate</td></tr>
+                        <tr><td><a href="https://www.allenstraining.com.au/" target="_blank" rel="sponsored noopener">Allens Training</a></td><td class="temp-val">$85&ndash;$110</td><td>Online, self-paced</td><td>Food Handler &amp; FSS</td><td>Budget option, established RTO</td></tr>
+                        <tr><td><a href="https://clubtraining.com.au/" target="_blank" rel="sponsored noopener">Club Training Australia</a></td><td class="temp-val">$95&ndash;$120</td><td>Online, self-paced</td><td>Food Handler &amp; FSS</td><td>Hospitality &amp; club industry focus</td></tr>
+                    </tbody>
+                </table>
+                </div>
+                <p class="footer-disclaimer">We may earn a commission if you purchase through links on this page. This never affects the price you pay or which providers we list.</p>
             </section>
+
             <section class="guide-section">
-                <h2>What to look for</h2>
+                <h2>How to choose the right course</h2>
+                <p>Four things matter far more than price:</p>
+                <ul>
+                    <li><strong>It must be nationally recognised.</strong> Look for the unit codes SITXFSA005 (and SITXFSA006 for supervisors) and confirm the RTO is listed on <a href="https://training.gov.au/" target="_blank" rel="noopener">training.gov.au</a>. A cheap &ldquo;certificate&rdquo; that isn't accredited is worthless to an employer.</li>
+                    <li><strong>It must be valid in your state.</strong> Most states accept the national units, but <strong>NSW requires the Food Safety Supervisor certificate to be issued by an NSW Food Authority&ndash;approved RTO</strong>. If you work in NSW, check this before enrolling. See our <a href="/food-safety-nsw.html">NSW page</a> for detail.</li>
+                    <li><strong>Match the certificate to your role.</strong> Food handlers need SITXFSA005; Food Safety Supervisors need both units. Don't pay for the supervisor course if you only need the handler unit &mdash; or vice versa.</li>
+                    <li><strong>Check what's included.</strong> Some prices include reassessment, a printable certificate, and renewal reminders; others charge extra. FSS certificates generally need renewing every five years, so renewal cost matters too.</li>
+                </ul>
+            </section>
+
+            <section class="guide-section">
+                <h2>Course formats &amp; how long they take</h2>
+                <p>Almost all food safety courses are now delivered <strong>online and self-paced</strong>, mixing short readings or videos with a quiz-style assessment and, for some RTOs, a practical observation. A food handler course often takes only <strong>two to four hours</strong>; a full Food Safety Supervisor course (both units) typically takes <strong>four to eight hours</strong>. Because you can stop and start, the real variable is how prepared you are &mdash; which is exactly why working through this site first saves you time and reduces the chance of a re-sit.</p>
+            </section>
+
+            <section class="guide-section">
+                <h2>What to look for at a glance</h2>
                 <ul>
                     <li>Nationally recognised unit codes (SITXFSA005 or SITXFSA006)</li>
                     <li>RTO listed on training.gov.au</li>
-                    <li>Certificate valid in your state</li>
+                    <li>Certificate valid in your state (especially NSW)</li>
+                    <li>Clear price &mdash; including any reassessment or certificate fees</li>
                     <li>FSS certificate renewed every 5 years</li>
                 </ul>
             </section>
-            <p class="footer-disclaimer">We may earn a commission if you purchase through links on this page.</p>
             <section class="guide-section">
                 <h2>Before you enrol</h2>
                 <p>Make sure you're choosing the right option: read <a href="/blog/food-safety-certificate-cost-australia-by-state/">food safety certificate cost by state</a> and <a href="/blog/how-to-get-food-safety-certificate-online-australia/">how to get a food safety certificate online</a>.</p>
@@ -165,16 +230,22 @@
         </div>
     </footer>
 
-    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie notice">
+    <div id="cookie-banner-backdrop" class="cookie-banner-backdrop" aria-hidden="true"></div>
+    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-modal="true" aria-labelledby="cookie-banner-title" aria-live="polite">
         <div class="cookie-banner__content">
-            <p>This site uses cookies and similar technologies to improve your experience and support analytics and advertising. By continuing to use this site, you agree to our <a href="/legal.html#privacy">Privacy Policy</a>.</p>
+            <div class="cookie-banner__copy">
+                <p id="cookie-banner-title"><strong>Accept cookies to continue</strong></p>
+                <p class="cookie-banner__sub">We use cookies to keep the site running and to understand how people use our free practice tests. Tap accept to start studying. <a href="/legal.html#privacy">Privacy Policy</a></p>
+            </div>
             <div class="cookie-banner__actions">
-                <button id="cookie-accept" class="btn btn-primary cookie-btn">Accept</button>
+                <button type="button" id="cookie-accept" class="btn btn-primary cookie-btn cookie-btn--accept">Accept &amp; continue</button>
+                <button type="button" id="cookie-deny" class="cookie-banner__reject">Essential cookies only</button>
             </div>
         </div>
     </div>
     <script src="faq-accordion.js" defer></script>
         <script src="cookie-consent.js" defer></script>
     <script src="site-ui.js" defer></script>
+    <script src="/ads.js" defer></script>
 </body>
 </html>

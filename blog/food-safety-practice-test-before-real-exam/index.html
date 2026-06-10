@@ -28,7 +28,7 @@
         }
       } catch (e) {}
     </script>
-    <title>Food Safety Practice Test Before the Real Exam | Food Safety AU</title>
+    <title>Food Safety Practice Test Before the Real Exam | AU</title>
     <meta name="description" content="Benefits of free food safety practice tests before your SITXFSA005 assessment: weak topics, timing, confidence, and how to use 650 questions effectively.">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Food Safety Practice AU">
@@ -43,7 +43,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://food-safety-practice-test-au.com/og-default.png">
     <link rel="icon" type="image/x-icon" href="../../favicon.ico">
-    <link rel="stylesheet" href="../../style.css?v=7">
+    <link rel="stylesheet" href="../../style.css?v=13">
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -150,7 +150,7 @@
                 <a href="../../temperature-danger-zone-checker.html" class="nav-link">Danger Zone Tool</a>
                 <a href="../../tips.html" class="nav-link">Exam Tips</a>
                 <a href="../../find-a-course.html" class="nav-link">Find a Course</a>
-                <a href="../../blog/" class="nav-link nav-link--active">Blog</a>
+                <a href="../../blog" class="nav-link nav-link--active">Blog</a>
                 <a href="../../flashcards.html" class="nav-link">Flashcards</a>
                 <a href="../../glossary.html" class="nav-link">Glossary</a>
                     </nav>
@@ -252,11 +252,16 @@
         </div>
     </footer>
 
-    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie notice">
+    <div id="cookie-banner-backdrop" class="cookie-banner-backdrop" aria-hidden="true"></div>
+    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-modal="true" aria-labelledby="cookie-banner-title" aria-live="polite">
         <div class="cookie-banner__content">
-            <p>This site uses cookies and similar technologies to improve your experience and support analytics and advertising. By continuing to use this site, you agree to our <a href="../../legal.html#privacy">Privacy Policy</a>.</p>
+            <div class="cookie-banner__copy">
+                <p id="cookie-banner-title"><strong>Accept cookies to continue</strong></p>
+                <p class="cookie-banner__sub">We use cookies to keep the site running and to understand how people use our free practice tests. Tap accept to start studying. <a href="../../legal.html#privacy">Privacy Policy</a></p>
+            </div>
             <div class="cookie-banner__actions">
-                <button id="cookie-accept" class="btn btn-primary cookie-btn">Accept</button>
+                <button type="button" id="cookie-accept" class="btn btn-primary cookie-btn cookie-btn--accept">Accept &amp; continue</button>
+                <button type="button" id="cookie-deny" class="cookie-banner__reject">Essential cookies only</button>
             </div>
         </div>
     </div>

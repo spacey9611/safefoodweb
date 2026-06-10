@@ -21,25 +21,37 @@
       gtag('js', new Date());
       gtag('config', 'G-N69BCEQGQ2');
     </script>
-    <script>
-      try {
-        if (localStorage.getItem("fs_cookie_accepted_v1") === "true") {
-          document.documentElement.classList.add("cookies-accepted");
+<script>
+      (function () {
+        try {
+          var c = localStorage.getItem("fs_cookie_consent_v2");
+          if (c === "accepted" || c === "denied") {
+            document.documentElement.classList.add("cookies-resolved");
+            if (c === "accepted") document.documentElement.classList.add("cookies-accepted");
+            return;
+          }
+          if (localStorage.getItem("fs_cookie_accepted_v1") === "true") {
+            document.documentElement.classList.add("cookies-resolved", "cookies-accepted");
+            return;
+          }
+          document.documentElement.classList.add("cookie-banner-open");
+        } catch (e) {
+          document.documentElement.classList.add("cookie-banner-open");
         }
-      } catch (e) {}
+      })();
     </script>
 
     <title>Free Food Safety Practice Test WA 2026 | SITXFSA005</title>
-    <meta name="description" content="Free food safety practice test for Western Australia (WA). 650 SITXFSA005 questions with instant feedback. No sign-up required.">
+    <meta name="description" content="Free WA food safety practice test: 650 SITXFSA005 questions aligned with the Food Act 2008 (WA) and Standard 3.2.2A. Instant feedback, no sign-up.">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Food Safety Practice AU">
     <link rel="canonical" href="https://food-safety-practice-test-au.com/food-safety-wa.html">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://food-safety-practice-test-au.com/food-safety-wa.html">
     <meta property="og:title" content="Free Food Safety Practice Test WA 2026 | SITXFSA005">
-    <meta property="og:description" content="Free food safety practice test for Western Australia. 650 questions aligned with WA Department of Health. Prepare for SITXFSA005 food handler or FSS certification.">
+    <meta property="og:description" content="Free WA food safety practice test: 650 SITXFSA005 questions aligned with the Food Act 2008 (WA) and Standard 3.2.2A. Instant feedback, no sign-up.">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="stylesheet" href="/style.css?v=9">
+    <link rel="stylesheet" href="/style.css?v=13">
     <meta name="state" content="wa">
     <script type="application/ld+json">
 {
@@ -94,6 +106,26 @@
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://food-safety-practice-test-au.com/og-default.png">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://food-safety-practice-test-au.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Food Safety Western Australia",
+      "item": "https://food-safety-practice-test-au.com/food-safety-wa.html"
+    }
+  ]
+}
+    </script>
 </head>
 <body>
     <header class="site-header">
@@ -114,7 +146,7 @@
                 <a href="/temperature-danger-zone-checker.html" class="nav-link">Danger Zone Tool</a>
                 <a href="/tips.html" class="nav-link">Exam Tips</a>
                 <a href="/find-a-course.html" class="nav-link">Find a Course</a>
-                <a href="/blog/" class="nav-link">Blog</a>
+                <a href="/blog" class="nav-link">Blog</a>
                 <a href="/flashcards.html" class="nav-link">Flashcards</a>
                 <a href="/glossary.html" class="nav-link">Glossary</a>
                     </nav>
@@ -139,11 +171,14 @@
             </div>
         </div>
     </header>
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><span aria-current="page">Food Safety Western Australia</span></li></ol></nav>
+    </div>
 
     <section class="home-editorial-hero" aria-labelledby="state-hero-title">
         <div class="container home-editorial-hero__inner">
             <p class="home-editorial-hero__badge">WA · WA Department of Health</p>
-            <h1 id="state-hero-title" class="home-editorial-hero__title">Food Safety Practice Test<br><span class="home-editorial-hero__accent">Western Australia (WA)</span></h1>
+            <h1 id="state-hero-title" class="home-editorial-hero__title">Food Safety Practice Test <br><span class="home-editorial-hero__accent">Western Australia (WA)</span></h1>
             <ul class="home-editorial-hero__list">
                 <li><strong>650+</strong> exam-style questions (40 per attempt)</li>
                 <li>Aligned with <strong>WA Department of Health</strong> requirements</li>
@@ -191,6 +226,12 @@
                 <div class="state-fact"><div class="state-fact__label">FSS validity</div><div class="state-fact__val">5 years</div></div>
                 <div class="state-fact"><div class="state-fact__label">Enforcement</div><div class="state-fact__val">Local EHOs</div></div>
             </div>
+                        <h3>Who needs food safety training in WA?</h3>
+            <p>Western Australia historically relied on the general duty that food businesses ensure staff have adequate food safety skills and knowledge, rather than mandating a supervisor for every business. Since the national Standard 3.2.2A took effect, many WA food-service businesses must now appoint a certified Food Safety Supervisor and ensure food handlers are trained. WA Health offers the free &ldquo;I'm Alert&rdquo; online program as an introduction, but an FSS still needs the accredited SITXFSA005 and SITXFSA006 units.</p>
+            <h3>Registering a food business in WA</h3>
+            <p>Register with your local government before trading; environmental health officers inspect premises and enforce the Food Act 2008 (WA). Requirements and notification forms can vary between local governments, so check the specifics with yours, especially for home-based, mobile or temporary food businesses.</p>
+            <h3>Preparing for your WA assessment</h3>
+            <p>Your assessment in WA is built on the national Food Standards Code and the SITXFSA005/006 units, so practising here prepares you directly. Concentrate on temperature control, the danger zone, allergen management and cleaning versus sanitising, then sit a full timed run. A consistent 80%+ means you are ready to enrol with an accredited provider &mdash; see <a href="/find-a-course.html">find a course</a>.</p>
             <div class="ad-slot" data-ad-slot="state-incontent" role="complementary" aria-label="Advertisement"><span class="ad-slot__label">Advertisement</span></div>
             <h3>WA Food Safety FAQ</h3>
             <dl>
@@ -236,16 +277,22 @@
         </div>
     </footer>
 
-    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie notice">
+    <div id="cookie-banner-backdrop" class="cookie-banner-backdrop" aria-hidden="true"></div>
+    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-modal="true" aria-labelledby="cookie-banner-title" aria-live="polite">
         <div class="cookie-banner__content">
-            <p>This site uses cookies and similar technologies to improve your experience and support analytics and advertising. By continuing to use this site, you agree to our <a href="/legal.html#privacy">Privacy Policy</a>.</p>
+            <div class="cookie-banner__copy">
+                <p id="cookie-banner-title"><strong>Accept cookies to continue</strong></p>
+                <p class="cookie-banner__sub">We use cookies to keep the site running and to understand how people use our free practice tests. Tap accept to start studying. <a href="/legal.html#privacy">Privacy Policy</a></p>
+            </div>
             <div class="cookie-banner__actions">
-                <button id="cookie-accept" class="btn btn-primary cookie-btn">Accept</button>
+                <button type="button" id="cookie-accept" class="btn btn-primary cookie-btn cookie-btn--accept">Accept &amp; continue</button>
+                <button type="button" id="cookie-deny" class="cookie-banner__reject">Essential cookies only</button>
             </div>
         </div>
     </div>
     <script src="faq-accordion.js" defer></script>
     <script src="cookie-consent.js" defer></script>
     <script type="module" src="script.js"></script>
+    <script src="/ads.js" defer></script>
 </body>
 </html>

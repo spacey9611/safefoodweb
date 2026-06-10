@@ -6,11 +6,11 @@ import json, pathlib
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 BLOG = ROOT / "blog"
 DOMAIN = "https://food-safety-practice-test-au.com"
-CSS_VER = "7"
+CSS_VER = "13"
 
 NAV = [("../../","Practice Test"),("../../guide.html","Study Guide"),
        ("../../temperature-danger-zone-checker.html","Danger Zone Tool"),("../../tips.html","Exam Tips"),
-       ("../../find-a-course.html","Find a Course"),("../../blog/","Blog"),
+       ("../../find-a-course.html","Find a Course"),("../../blog","Blog"),
        ("../../flashcards.html","Flashcards"),("../../glossary.html","Glossary")]
 STATES = [("nsw","NSW"),("vic","VIC"),("qld","QLD"),("wa","WA"),("sa","SA"),("act","ACT"),("nt","NT"),("tas","TAS")]
 
@@ -68,11 +68,16 @@ FOOTER = '''    <footer class="footer">
         </div>
     </footer>
 
-    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie notice">
+    <div id="cookie-banner-backdrop" class="cookie-banner-backdrop" aria-hidden="true"></div>
+    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-modal="true" aria-labelledby="cookie-banner-title" aria-live="polite">
         <div class="cookie-banner__content">
-            <p>This site uses cookies and similar technologies to improve your experience and support analytics and advertising. By continuing to use this site, you agree to our <a href="../../legal.html#privacy">Privacy Policy</a>.</p>
+            <div class="cookie-banner__copy">
+                <p id="cookie-banner-title"><strong>Accept cookies to continue</strong></p>
+                <p class="cookie-banner__sub">We use cookies to keep the site running and to understand how people use our free practice tests. Tap accept to start studying. <a href="../../legal.html#privacy">Privacy Policy</a></p>
+            </div>
             <div class="cookie-banner__actions">
-                <button id="cookie-accept" class="btn btn-primary cookie-btn">Accept</button>
+                <button type="button" id="cookie-accept" class="btn btn-primary cookie-btn cookie-btn--accept">Accept &amp; continue</button>
+                <button type="button" id="cookie-deny" class="cookie-banner__reject">Essential cookies only</button>
             </div>
         </div>
     </div>
@@ -206,7 +211,7 @@ post(
             <p>Exact requirements can vary slightly by state regulator. For state-specific context see our pages for <a href="../../food-safety-nsw.html">NSW</a>, <a href="../../food-safety-vic.html">VIC</a>, and <a href="../../food-safety-qld.html">QLD</a>, or read <a href="../food-safety-certificate-cost-australia-by-state/">certificate costs by state</a>.</p>
             <h2>December 2023: Standard 3.2.2A expansion</h2>
             <p>From December 2023, <strong>Standard 3.2.2A</strong> extended food handler training requirements to more sectors, including <strong>schools, childcare, aged care, and charities</strong> that serve food. Even if you are not in a traditional restaurant, you may now need documented food handler training where you did not before.</p>
-            <p>Read the full breakdown: <a href="../food-safety-training-aged-care-childcare-2023/">Food safety training for aged care, childcare &amp; schools</a>.</p>
+            <p>Read the full breakdown: <a href="../food-safety-training-aged-care-childcare/">Food safety training for aged care, childcare &amp; schools</a>.</p>
             <h2>Which one do you need?</h2>
             <table class="cook-table">
                 <thead><tr><th>Your situation</th><th>Usually need</th></tr></thead>
@@ -421,7 +426,7 @@ post(
 
 # ── POST 5 ──────────────────────────────────────────────────────────────────
 post(
- "food-safety-training-aged-care-childcare-2023",
+ "food-safety-training-aged-care-childcare",
  "Food Safety Training: Aged Care, Childcare & Schools",
  "Who needs food handler training under Standard 3.2.2A: aged care, childcare, schools and charities. December 2023 changes explained simply.",
  "Food Safety Training for Aged Care, Childcare & Schools: Standard 3.2.2A Explained",
@@ -718,7 +723,7 @@ def render(p):
         }}
       }} catch (e) {{}}
     </script>
-    <title>{p["title"]} | Food Safety AU</title>
+    <title>{p["title"]} | AU</title>
     <meta name="description" content="{p["desc"]}">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Food Safety Practice AU">
@@ -780,7 +785,7 @@ def build_index():
         for href, t in [("", "Practice Test"), ("guide.html", "Study Guide"),
                         ("temperature-danger-zone-checker.html", "Danger Zone Tool"),
                         ("tips.html", "Exam Tips"), ("find-a-course.html", "Find a Course"),
-                        ("blog/", "Blog"), ("flashcards.html", "Flashcards"), ("glossary.html", "Glossary")])
+                        ("blog", "Blog"), ("flashcards.html", "Flashcards"), ("glossary.html", "Glossary")])
     states = "\n".join(
         f'                <a href="/food-safety-{c}.html" class="state-link" title="Food Safety Practice Test {a}">{a}</a>'
         for c, a in STATES)
@@ -832,6 +837,11 @@ def build_index():
     <meta name="twitter:image" content="https://food-safety-practice-test-au.com/og-default.png">
     <script type="application/ld+json">
 {collection_schema}
+    </script>
+    <script type="application/ld+json">
+{json.dumps({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+  {"@type":"ListItem","position":1,"name":"Home","item":f"{DOMAIN}/"},
+  {"@type":"ListItem","position":2,"name":"Blog","item":f"{DOMAIN}/blog"}]}, indent=2, ensure_ascii=True)}
     </script>
 </head>
 <body>
@@ -893,11 +903,16 @@ def build_index():
         </div>
     </footer>
 
-    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie notice">
+    <div id="cookie-banner-backdrop" class="cookie-banner-backdrop" aria-hidden="true"></div>
+    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-modal="true" aria-labelledby="cookie-banner-title" aria-live="polite">
         <div class="cookie-banner__content">
-            <p>This site uses cookies and similar technologies to improve your experience and support analytics and advertising. By continuing to use this site, you agree to our <a href="/legal.html#privacy">Privacy Policy</a>.</p>
+            <div class="cookie-banner__copy">
+                <p id="cookie-banner-title"><strong>Accept cookies to continue</strong></p>
+                <p class="cookie-banner__sub">We use cookies to keep the site running and to understand how people use our free practice tests. Tap accept to start studying. <a href="/legal.html#privacy">Privacy Policy</a></p>
+            </div>
             <div class="cookie-banner__actions">
-                <button id="cookie-accept" class="btn btn-primary cookie-btn">Accept</button>
+                <button type="button" id="cookie-accept" class="btn btn-primary cookie-btn cookie-btn--accept">Accept &amp; continue</button>
+                <button type="button" id="cookie-deny" class="cookie-banner__reject">Essential cookies only</button>
             </div>
         </div>
     </div>

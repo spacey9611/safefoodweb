@@ -21,25 +21,37 @@
       gtag('js', new Date());
       gtag('config', 'G-N69BCEQGQ2');
     </script>
-    <script>
-      try {
-        if (localStorage.getItem("fs_cookie_accepted_v1") === "true") {
-          document.documentElement.classList.add("cookies-accepted");
+<script>
+      (function () {
+        try {
+          var c = localStorage.getItem("fs_cookie_consent_v2");
+          if (c === "accepted" || c === "denied") {
+            document.documentElement.classList.add("cookies-resolved");
+            if (c === "accepted") document.documentElement.classList.add("cookies-accepted");
+            return;
+          }
+          if (localStorage.getItem("fs_cookie_accepted_v1") === "true") {
+            document.documentElement.classList.add("cookies-resolved", "cookies-accepted");
+            return;
+          }
+          document.documentElement.classList.add("cookie-banner-open");
+        } catch (e) {
+          document.documentElement.classList.add("cookie-banner-open");
         }
-      } catch (e) {}
+      })();
     </script>
 
     <title>Free Food Safety Practice Test QLD 2026 | SITXFSA005</title>
-    <meta name="description" content="Free food safety practice test for Queensland (QLD). 650 SITXFSA005 questions with instant feedback. No sign-up required.">
+    <meta name="description" content="Free Queensland food safety practice test: 650 SITXFSA005 questions for licensed venues under the Food Act 2006 (Qld). Instant feedback, no sign-up.">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Food Safety Practice AU">
     <link rel="canonical" href="https://food-safety-practice-test-au.com/food-safety-qld.html">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://food-safety-practice-test-au.com/food-safety-qld.html">
     <meta property="og:title" content="Free Food Safety Practice Test QLD 2026 | SITXFSA005">
-    <meta property="og:description" content="Free food safety practice test for Queensland. 650 questions aligned with Queensland Health / Safe Food Production Queensland. Prepare for SITXFSA005 food handler or FSS certification.">
+    <meta property="og:description" content="Free Queensland food safety practice test: 650 SITXFSA005 questions for licensed venues under the Food Act 2006 (Qld). Instant feedback, no sign-up.">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="stylesheet" href="/style.css?v=9">
+    <link rel="stylesheet" href="/style.css?v=13">
     <meta name="state" content="qld">
     <script type="application/ld+json">
 {
@@ -94,6 +106,26 @@
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://food-safety-practice-test-au.com/og-default.png">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://food-safety-practice-test-au.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Food Safety Queensland",
+      "item": "https://food-safety-practice-test-au.com/food-safety-qld.html"
+    }
+  ]
+}
+    </script>
 </head>
 <body>
     <header class="site-header">
@@ -114,7 +146,7 @@
                 <a href="/temperature-danger-zone-checker.html" class="nav-link">Danger Zone Tool</a>
                 <a href="/tips.html" class="nav-link">Exam Tips</a>
                 <a href="/find-a-course.html" class="nav-link">Find a Course</a>
-                <a href="/blog/" class="nav-link">Blog</a>
+                <a href="/blog" class="nav-link">Blog</a>
                 <a href="/flashcards.html" class="nav-link">Flashcards</a>
                 <a href="/glossary.html" class="nav-link">Glossary</a>
                     </nav>
@@ -139,11 +171,14 @@
             </div>
         </div>
     </header>
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><span aria-current="page">Food Safety Queensland</span></li></ol></nav>
+    </div>
 
     <section class="home-editorial-hero" aria-labelledby="state-hero-title">
         <div class="container home-editorial-hero__inner">
             <p class="home-editorial-hero__badge">QLD · Queensland Health / Safe Food Production Queensland</p>
-            <h1 id="state-hero-title" class="home-editorial-hero__title">Food Safety Practice Test<br><span class="home-editorial-hero__accent">Queensland (QLD)</span></h1>
+            <h1 id="state-hero-title" class="home-editorial-hero__title">Food Safety Practice Test <br><span class="home-editorial-hero__accent">Queensland (QLD)</span></h1>
             <ul class="home-editorial-hero__list">
                 <li><strong>650+</strong> exam-style questions (40 per attempt)</li>
                 <li>Aligned with <strong>Queensland Health / Safe Food Production Queensland</strong> requirements</li>
@@ -191,6 +226,12 @@
                 <div class="state-fact"><div class="state-fact__label">FSS validity</div><div class="state-fact__val">5 years</div></div>
                 <div class="state-fact"><div class="state-fact__label">Also</div><div class="state-fact__val">Safe Food Production Qld (primary)</div></div>
             </div>
+                        <h3>Who needs food safety training in Queensland?</h3>
+            <p>Queensland licenses food businesses through local councils, and any licensable food business must have a Food Safety Supervisor with a current, nationally recognised certificate available while it operates. Higher-risk licensed premises must also keep a documented food safety program that is audited on a schedule. All food handlers &mdash; cooks, kitchen hands, servers and baristas &mdash; need food safety skills and knowledge suited to their role, typically gained through the SITXFSA005 unit.</p>
+            <h3>Licensing your food business in Queensland</h3>
+            <p>You apply for a food business licence with your local council before trading; primary producers such as meat, dairy, seafood and egg businesses are instead accredited by Safe Food Production Queensland. Councils inspect premises and enforce the Food Act 2006 (Qld). When opening a venue, confirm your licence category early, because it determines whether you need a food safety program and regular audits.</p>
+            <h3>Preparing for your Queensland assessment</h3>
+            <p>The knowledge tested in Queensland is the national Food Standards Code and the SITXFSA005/006 units, which are recognised in every state. Use topic mode here to shore up temperature control, cross-contamination, allergens and HACCP, then take a full timed test. Hitting 80%+ reliably is the signal you are ready to certify with an accredited provider listed on our <a href="/find-a-course.html">find a course</a> page.</p>
             <div class="ad-slot" data-ad-slot="state-incontent" role="complementary" aria-label="Advertisement"><span class="ad-slot__label">Advertisement</span></div>
             <h3>QLD Food Safety FAQ</h3>
             <dl>
@@ -236,16 +277,22 @@
         </div>
     </footer>
 
-    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie notice">
+    <div id="cookie-banner-backdrop" class="cookie-banner-backdrop" aria-hidden="true"></div>
+    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-modal="true" aria-labelledby="cookie-banner-title" aria-live="polite">
         <div class="cookie-banner__content">
-            <p>This site uses cookies and similar technologies to improve your experience and support analytics and advertising. By continuing to use this site, you agree to our <a href="/legal.html#privacy">Privacy Policy</a>.</p>
+            <div class="cookie-banner__copy">
+                <p id="cookie-banner-title"><strong>Accept cookies to continue</strong></p>
+                <p class="cookie-banner__sub">We use cookies to keep the site running and to understand how people use our free practice tests. Tap accept to start studying. <a href="/legal.html#privacy">Privacy Policy</a></p>
+            </div>
             <div class="cookie-banner__actions">
-                <button id="cookie-accept" class="btn btn-primary cookie-btn">Accept</button>
+                <button type="button" id="cookie-accept" class="btn btn-primary cookie-btn cookie-btn--accept">Accept &amp; continue</button>
+                <button type="button" id="cookie-deny" class="cookie-banner__reject">Essential cookies only</button>
             </div>
         </div>
     </div>
     <script src="faq-accordion.js" defer></script>
     <script src="cookie-consent.js" defer></script>
     <script type="module" src="script.js"></script>
+    <script src="/ads.js" defer></script>
 </body>
 </html>

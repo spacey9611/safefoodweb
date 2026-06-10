@@ -22,11 +22,23 @@
       gtag('config', 'G-N69BCEQGQ2');
     </script>
     <script>
-      try {
-        if (localStorage.getItem("fs_cookie_accepted_v1") === "true") {
-          document.documentElement.classList.add("cookies-accepted");
+      (function () {
+        try {
+          var c = localStorage.getItem("fs_cookie_consent_v2");
+          if (c === "accepted" || c === "denied") {
+            document.documentElement.classList.add("cookies-resolved");
+            if (c === "accepted") document.documentElement.classList.add("cookies-accepted");
+            return;
+          }
+          if (localStorage.getItem("fs_cookie_accepted_v1") === "true") {
+            document.documentElement.classList.add("cookies-resolved", "cookies-accepted");
+            return;
+          }
+          document.documentElement.classList.add("cookie-banner-open");
+        } catch (e) {
+          document.documentElement.classList.add("cookie-banner-open");
         }
-      } catch (e) {}
+      })();
     </script>
     <title>Food Handler Practice Test 2026 (SITXFSA005) | Free</title>
     <meta name="description" content="Free food handler practice test for Australia. 650 SITXFSA005 questions with instant feedback and explanations. No sign-up. Get job-ready for your first shift.">
@@ -43,7 +55,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://food-safety-practice-test-au.com/og-default.png">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="stylesheet" href="/style.css?v=7">
+    <link rel="stylesheet" href="/style.css?v=13">
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -92,6 +104,26 @@
   ]
 }
     </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://food-safety-practice-test-au.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Food Handler Practice Test",
+      "item": "https://food-safety-practice-test-au.com/food-handler-practice-test.html"
+    }
+  ]
+}
+    </script>
 </head>
 <body>
     <header class="site-header">
@@ -112,7 +144,7 @@
                 <a href="/temperature-danger-zone-checker.html" class="nav-link">Danger Zone Tool</a>
                 <a href="/tips.html" class="nav-link">Exam Tips</a>
                 <a href="/find-a-course.html" class="nav-link">Find a Course</a>
-                <a href="/blog/" class="nav-link">Blog</a>
+                <a href="/blog" class="nav-link">Blog</a>
                 <a href="/flashcards.html" class="nav-link">Flashcards</a>
                 <a href="/glossary.html" class="nav-link">Glossary</a>
                     </nav>
@@ -179,6 +211,7 @@
                     <a href="/guide.html" class="topic-link-card">Study Guide</a>
                     <a href="/temperature-danger-zone-checker.html" class="topic-link-card">Danger Zone Tool</a>
                     <a href="/flashcards.html" class="topic-link-card">Flashcards</a>
+                    <a href="/dofoodsafely-vs-free-practice-test.html" class="topic-link-card">DoFoodSafely vs Free Practice Test</a>
                 </div>
             </section>
             <section class="guide-section">
@@ -224,17 +257,22 @@
             <p class="footer-disclaimer">This page is free practice and educational content only. Your certificate must be issued by a Registered Training Organisation (RTO).</p>
         </div>
     </footer>
-
-    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie notice">
+    <div id="cookie-banner-backdrop" class="cookie-banner-backdrop" aria-hidden="true"></div>
+    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-modal="true" aria-labelledby="cookie-banner-title" aria-live="polite">
         <div class="cookie-banner__content">
-            <p>This site uses cookies and similar technologies to improve your experience and support analytics and advertising. By continuing to use this site, you agree to our <a href="/legal.html#privacy">Privacy Policy</a>.</p>
+            <div class="cookie-banner__copy">
+                <p id="cookie-banner-title"><strong>Accept cookies to continue</strong></p>
+                <p class="cookie-banner__sub">We use cookies to keep the site running and to understand how people use our free practice tests. Tap accept to start studying. <a href="/legal.html#privacy">Privacy Policy</a></p>
+            </div>
             <div class="cookie-banner__actions">
-                <button id="cookie-accept" class="btn btn-primary cookie-btn">Accept</button>
+                <button type="button" id="cookie-accept" class="btn btn-primary cookie-btn cookie-btn--accept">Accept &amp; continue</button>
+                <button type="button" id="cookie-deny" class="cookie-banner__reject">Essential cookies only</button>
             </div>
         </div>
     </div>
     <script src="faq-accordion.js" defer></script>
     <script src="cookie-consent.js" defer></script>
     <script src="site-ui.js" defer></script>
+    <script src="/ads.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 430" role="img" aria-label="The seven principles of HACCP: conduct a hazard analysis, determine critical control points, establish critical limits, establish monitoring, establish corrective actions, establish verification, and establish record keeping">
+  <style>
+    .t{font-family:Arial,Helvetica,sans-serif;}
+    .title{font-size:18px;fill:#1A1F1C;font-weight:700;}
+    .num{font-size:15px;fill:#fff;font-weight:700;}
+    .step{font-size:14px;fill:#1A1F1C;font-weight:700;}
+    .desc{font-size:12px;fill:#5C6760;}
+    .cap{font-size:11px;fill:#5C6760;}
+  </style>
+  <rect width="560" height="430" fill="#FFFFFF"/>
+  <text x="24" y="34" class="t title">The 7 Principles of HACCP</text>
+
+  <g>
+    <!-- step template: badge circle + text -->
+    <!-- y positions -->
+    <!-- 1 -->
+    <line x1="44" y1="70" x2="44" y2="392" stroke="#D1FAE5" stroke-width="4"/>
+    <circle cx="44" cy="78"  r="16" fill="#059669"/><text x="39" y="83" class="t num">1</text>
+    <text x="74" y="74" class="t step">Conduct a hazard analysis</text>
+    <text x="74" y="92" class="t desc">Identify biological, chemical and physical hazards.</text>
+
+    <circle cx="44" cy="128" r="16" fill="#059669"/><text x="39" y="133" class="t num">2</text>
+    <text x="74" y="124" class="t step">Determine Critical Control Points (CCPs)</text>
+    <text x="74" y="142" class="t desc">Steps where a hazard can be prevented or removed (e.g. cooking).</text>
+
+    <circle cx="44" cy="178" r="16" fill="#059669"/><text x="39" y="183" class="t num">3</text>
+    <text x="74" y="174" class="t step">Establish critical limits</text>
+    <text x="74" y="192" class="t desc">Measurable limits, such as cook to 75&#176;C.</text>
+
+    <circle cx="44" cy="228" r="16" fill="#059669"/><text x="39" y="233" class="t num">4</text>
+    <text x="74" y="224" class="t step">Establish monitoring</text>
+    <text x="74" y="242" class="t desc">Check each CCP &#8212; who, how and how often.</text>
+
+    <circle cx="44" cy="278" r="16" fill="#059669"/><text x="39" y="283" class="t num">5</text>
+    <text x="74" y="274" class="t step">Establish corrective actions</text>
+    <text x="74" y="292" class="t desc">What to do when a limit is breached (reheat, discard).</text>
+
+    <circle cx="44" cy="328" r="16" fill="#059669"/><text x="39" y="333" class="t num">6</text>
+    <text x="74" y="324" class="t step">Establish verification</text>
+    <text x="74" y="342" class="t desc">Confirm the system works (checks, calibration, review).</text>
+
+    <circle cx="44" cy="378" r="16" fill="#059669"/><text x="39" y="383" class="t num">7</text>
+    <text x="74" y="374" class="t step">Establish record keeping</text>
+    <text x="74" y="392" class="t desc">Document procedures and monitoring results.</text>
+  </g>
+  <text x="24" y="420" class="t cap">food-safety-practice-test-au.com &#183; Hazard Analysis and Critical Control Points</text>
+</svg>

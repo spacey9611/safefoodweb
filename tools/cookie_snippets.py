@@ -23,20 +23,40 @@ GA4_TAG = f'''    <!-- Google tag (gtag.js) -->
     </script>'''
 
 COOKIE_HEAD = '''    <script>
-      try {
-        if (localStorage.getItem("fs_cookie_accepted_v1") === "true") {
-          document.documentElement.classList.add("cookies-accepted");
+      (function () {
+        try {
+          var c = localStorage.getItem("fs_cookie_consent_v2");
+          if (c === "accepted" || c === "denied") {
+            document.documentElement.classList.add("cookies-resolved");
+            if (c === "accepted") document.documentElement.classList.add("cookies-accepted");
+            return;
+          }
+          if (localStorage.getItem("fs_cookie_accepted_v1") === "true") {
+            document.documentElement.classList.add("cookies-resolved", "cookies-accepted");
+            return;
+          }
+          document.documentElement.classList.add("cookie-banner-open");
+        } catch (e) {
+          document.documentElement.classList.add("cookie-banner-open");
         }
-      } catch (e) {}
+      })();
     </script>'''
 
-COOKIE_BANNER = '''    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie notice">
+def cookie_banner_html(legal_href="/legal.html#privacy"):
+    return f'''    <div id="cookie-banner-backdrop" class="cookie-banner-backdrop" aria-hidden="true"></div>
+    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-modal="true" aria-labelledby="cookie-banner-title" aria-live="polite">
         <div class="cookie-banner__content">
-            <p>We use cookies for analytics and advertising. See our <a href="{legal}">Privacy Policy</a>.</p>
+            <div class="cookie-banner__copy">
+                <p id="cookie-banner-title"><strong>Accept cookies to continue</strong></p>
+                <p class="cookie-banner__sub">We use cookies to keep the site running and to understand how people use our free practice tests. Tap accept to start studying. <a href="{legal_href}">Privacy Policy</a></p>
+            </div>
             <div class="cookie-banner__actions">
-                <button type="button" id="cookie-accept" class="btn btn-primary cookie-btn">Accept</button>
+                <button type="button" id="cookie-accept" class="btn btn-primary cookie-btn cookie-btn--accept">Accept &amp; continue</button>
+                <button type="button" id="cookie-deny" class="cookie-banner__reject">Essential cookies only</button>
             </div>
         </div>
     </div>'''
+
+COOKIE_BANNER = cookie_banner_html()
 
 COOKIE_SCRIPT = '<script src="{src}" defer></script>'

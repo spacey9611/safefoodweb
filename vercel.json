@@ -15,6 +15,8 @@
     { "source": "/blog/:slug/index.html", "destination": "/blog/:slug", "permanent": true },
     { "source": "/blog/:slug/", "destination": "/blog/:slug", "permanent": true },
     { "source": "/blog/", "destination": "/blog", "permanent": true },
+    { "source": "/blog/food-safety-training-aged-care-childcare-2023", "destination": "/blog/food-safety-training-aged-care-childcare", "permanent": true },
+    { "source": "/blog/food-safety-training-aged-care-childcare-2023/:p*", "destination": "/blog/food-safety-training-aged-care-childcare", "permanent": true },
     { "source": "/food-safety-nsw", "destination": "/food-safety-nsw.html", "permanent": true },
     { "source": "/food-safety-vic", "destination": "/food-safety-vic.html", "permanent": true },
     { "source": "/food-safety-qld", "destination": "/food-safety-qld.html", "permanent": true },

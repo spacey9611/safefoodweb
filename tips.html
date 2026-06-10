@@ -21,12 +21,24 @@
       gtag('js', new Date());
       gtag('config', 'G-N69BCEQGQ2');
     </script>
-    <script>
-      try {
-        if (localStorage.getItem("fs_cookie_accepted_v1") === "true") {
-          document.documentElement.classList.add("cookies-accepted");
+<script>
+      (function () {
+        try {
+          var c = localStorage.getItem("fs_cookie_consent_v2");
+          if (c === "accepted" || c === "denied") {
+            document.documentElement.classList.add("cookies-resolved");
+            if (c === "accepted") document.documentElement.classList.add("cookies-accepted");
+            return;
+          }
+          if (localStorage.getItem("fs_cookie_accepted_v1") === "true") {
+            document.documentElement.classList.add("cookies-resolved", "cookies-accepted");
+            return;
+          }
+          document.documentElement.classList.add("cookie-banner-open");
+        } catch (e) {
+          document.documentElement.classList.add("cookie-banner-open");
         }
-      } catch (e) {}
+      })();
     </script>
 
     <title>Food Safety Exam Tips 2026 | Study Smart &amp; Pass</title>
@@ -36,16 +48,36 @@
     <link rel="canonical" href="https://food-safety-practice-test-au.com/tips.html">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://food-safety-practice-test-au.com/tips.html">
-    <meta property="og:title" content="How to Pass the Food Safety Test 2026 | Exam Tips">
+    <meta property="og:title" content="Food Safety Exam Tips 2026 | Study Smart &amp; Pass">
     <meta property="og:description" content="Expert tips to pass your Australian food safety handler or FSS assessment. Study strategy, common mistakes, and what RTOs expect.">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="stylesheet" href="/style.css?v=9">
+    <link rel="stylesheet" href="/style.css?v=13">
 
     <meta property="og:image" content="https://food-safety-practice-test-au.com/og-default.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://food-safety-practice-test-au.com/og-default.png">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://food-safety-practice-test-au.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Exam Tips",
+      "item": "https://food-safety-practice-test-au.com/tips.html"
+    }
+  ]
+}
+    </script>
 </head>
 <body>
     <header class="site-header">
@@ -66,7 +98,7 @@
                 <a href="/temperature-danger-zone-checker.html" class="nav-link">Danger Zone Tool</a>
                 <a href="/tips.html" class="nav-link nav-link--active">Exam Tips</a>
                 <a href="/find-a-course.html" class="nav-link">Find a Course</a>
-                <a href="/blog/" class="nav-link">Blog</a>
+                <a href="/blog" class="nav-link">Blog</a>
                 <a href="/flashcards.html" class="nav-link">Flashcards</a>
                 <a href="/glossary.html" class="nav-link">Glossary</a>
                     </nav>
@@ -91,10 +123,52 @@
             </div>
         </div>
     </header>
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><span aria-current="page">Exam Tips</span></li></ol></nav>
+    </div>
 
     <main class="container">
         <article class="content-page">
             <h1>Food Safety Exam Tips</h1>
+            <p class="lead">The Australian food safety assessment isn't designed to trick you &mdash; it's designed to check that you'll keep food safe at work. Almost everyone passes when they prepare properly, and the few who don't usually fail for predictable reasons: they memorised numbers without understanding them, rushed the wording, or never practised the scenario-style questions that make up a large part of the test. This page brings together the tips that actually move your score, from how the assessment is structured to topic-by-topic advice and a simple study plan. Pair it with the <a href="/">free practice test</a> and the <a href="/guide.html">study guide</a> and you'll walk in confident.</p>
+
+            <section class="guide-section">
+                <h2>What the assessment actually looks like</h2>
+                <p>Whether you sit it through a Registered Training Organisation (RTO), an online accredited course, or an employer induction, the food safety assessment is overwhelmingly multiple-choice and short-answer, drawn from the required knowledge of <strong>SITXFSA005</strong> (and <strong>SITXFSA006</strong> for supervisors). Expect somewhere between 20 and 50 questions depending on the provider, and a pass mark that is usually around <strong>80%</strong> &mdash; higher than the 50% many people assume. Some RTOs also require you to be observed performing tasks like handwashing or taking a temperature, because the unit is competency-based: you have to <em>demonstrate</em> the skill, not just recall it. The good news is there is no time pressure on most online versions and you can usually re-sit if you don't pass first time.</p>
+            </section>
+
+            <section class="guide-section">
+                <h2>The question styles you'll see</h2>
+                <p>Knowing the format helps you stay calm. There are three common styles:</p>
+                <ul>
+                    <li><strong>Straight recall:</strong> &ldquo;What is the temperature danger zone?&rdquo; These reward memorising the key facts &mdash; 5&nbsp;&deg;C&ndash;60&nbsp;&deg;C, 75&nbsp;&deg;C cooking, 60&nbsp;&deg;C hot-hold, five-year FSS renewal.</li>
+                    <li><strong>Scenario / situational:</strong> &ldquo;A delivery of chicken arrives at 9&nbsp;&deg;C. What should you do?&rdquo; These are the questions that catch people out, because you have to apply a rule, not just state it. Roughly 40% of our practice bank is written in this style on purpose.</li>
+                    <li><strong>&ldquo;Best answer&rdquo; questions:</strong> several options are partly right and you must pick the safest or most correct. When stuck, choose the answer that best protects public health &mdash; it's almost always correct.</li>
+                </ul>
+                <p>Watch for negative wording. Questions that contain &ldquo;NOT&rdquo;, &ldquo;EXCEPT&rdquo; or &ldquo;LEAST&rdquo; flip the logic, and misreading them is the single most common avoidable mistake.</p>
+            </section>
+
+            <section class="guide-section">
+                <h2>Topic-by-topic tips</h2>
+                <p><strong>Temperature</strong> is the most heavily tested area, so make it automatic: danger zone 5&ndash;60&nbsp;&deg;C, cook to 75&nbsp;&deg;C, reheat to 70&nbsp;&deg;C, hot-hold at 60&nbsp;&deg;C+, fridge at or below 5&nbsp;&deg;C, freezer at or below &minus;18&nbsp;&deg;C. Understand the <strong>2-hour/4-hour rule</strong> as a decision, not a number: under 2 hours total in the zone you can refrigerate or use; 2&ndash;4 hours you must use immediately; over 4 hours you discard.</p>
+                <p><strong>Cross-contamination</strong> questions usually test separation of raw and ready-to-eat food and storing raw meat below other food. <strong>Allergens</strong> questions test that you can't &ldquo;cook out&rdquo; an allergen and that accurate information matters more than guessing. <strong>Hygiene</strong> questions centre on when to wash hands and not working while sick. <strong>Cleaning</strong> questions test the difference between cleaning and sanitising and the correct order. <strong>HACCP</strong> questions test the idea of a critical control point and taking corrective action. If you can confidently handle those, you've covered most of the paper.</p>
+            </section>
+
+            <section class="guide-section">
+                <h2>Time management &amp; technique</h2>
+                <p>Even when there's no timer, work in a steady rhythm. Answer the questions you know immediately, flag anything uncertain, and come back &mdash; don't let one hard question eat your confidence. Read each question fully before looking at the options, predict the answer in your head, then find the option that matches. Eliminate the clearly wrong choices first; that often turns a four-way guess into a coin toss in your favour. Don't second-guess and change answers unless you have a clear reason &mdash; first instincts on food safety questions are usually right when you've studied.</p>
+            </section>
+
+            <section class="guide-section">
+                <h2>RTO assessment vs online course vs employer quiz</h2>
+                <p>It helps to know which version you're sitting. An <strong>accredited RTO course</strong> (online or in person) is the only one that issues a nationally recognised Statement of Attainment for SITXFSA005/006 &mdash; this is what most employers and councils require, and it may include an observed practical component. An <strong>employer induction quiz</strong> checks you understand the workplace's procedures but is not a formal qualification. A free practice test like this one prepares you for all of them, because the underlying knowledge is identical &mdash; but remember our test is study practice, not certification. When you're ready to get certified, see <a href="/find-a-course.html">find a course</a>.</p>
+            </section>
+
+            <section class="guide-section">
+                <h2>State-specific points to remember</h2>
+                <p>The national units are the same everywhere, but a few state rules come up. <strong>NSW</strong> and some other states legally require certain businesses to appoint a Food Safety Supervisor, and from September 2025 NSW strengthened its food-handler and FSS training requirements. <strong>Queensland</strong> and other states have their own licensing and supervisor rules. If you're studying for a specific state, read the matching page &mdash; for example <a href="/food-safety-nsw.html">NSW</a> or <a href="/food-safety-vic.html">VIC</a> &mdash; so you're not surprised by a local detail.</p>
+            </section>
+
             <section class="guide-section">
                 <h2>Before the test</h2>
                 <ul>
@@ -161,16 +235,22 @@
         </div>
     </footer>
 
-    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie notice">
+    <div id="cookie-banner-backdrop" class="cookie-banner-backdrop" aria-hidden="true"></div>
+    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-modal="true" aria-labelledby="cookie-banner-title" aria-live="polite">
         <div class="cookie-banner__content">
-            <p>This site uses cookies and similar technologies to improve your experience and support analytics and advertising. By continuing to use this site, you agree to our <a href="/legal.html#privacy">Privacy Policy</a>.</p>
+            <div class="cookie-banner__copy">
+                <p id="cookie-banner-title"><strong>Accept cookies to continue</strong></p>
+                <p class="cookie-banner__sub">We use cookies to keep the site running and to understand how people use our free practice tests. Tap accept to start studying. <a href="/legal.html#privacy">Privacy Policy</a></p>
+            </div>
             <div class="cookie-banner__actions">
-                <button id="cookie-accept" class="btn btn-primary cookie-btn">Accept</button>
+                <button type="button" id="cookie-accept" class="btn btn-primary cookie-btn cookie-btn--accept">Accept &amp; continue</button>
+                <button type="button" id="cookie-deny" class="cookie-banner__reject">Essential cookies only</button>
             </div>
         </div>
     </div>
     <script src="faq-accordion.js" defer></script>
         <script src="cookie-consent.js" defer></script>
     <script src="site-ui.js" defer></script>
+    <script src="/ads.js" defer></script>
 </body>
 </html>

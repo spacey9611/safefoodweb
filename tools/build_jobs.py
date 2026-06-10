@@ -11,7 +11,7 @@ NAV = [
     ("/temperature-danger-zone-checker.html", "Danger Zone Tool", False),
     ("/tips.html", "Exam Tips", False),
     ("/find-a-course.html", "Find a Course", False),
-    ("/blog/", "Blog", False),
+    ("/blog", "Blog", False),
     ("/flashcards.html", "Flashcards", False),
     ("/glossary.html", "Glossary", False),
 ]
@@ -71,11 +71,16 @@ FOOTER = '''    <footer class="footer">
         </div>
     </footer>
 
-    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie notice">
+    <div id="cookie-banner-backdrop" class="cookie-banner-backdrop" aria-hidden="true"></div>
+    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-modal="true" aria-labelledby="cookie-banner-title" aria-live="polite">
         <div class="cookie-banner__content">
-            <p>This site uses cookies and similar technologies to improve your experience and support analytics and advertising. By continuing to use this site, you agree to our <a href="/legal.html#privacy">Privacy Policy</a>.</p>
+            <div class="cookie-banner__copy">
+                <p id="cookie-banner-title"><strong>Accept cookies to continue</strong></p>
+                <p class="cookie-banner__sub">We use cookies to keep the site running and to understand how people use our free practice tests. Tap accept to start studying. <a href="/legal.html#privacy">Privacy Policy</a></p>
+            </div>
             <div class="cookie-banner__actions">
-                <button id="cookie-accept" class="btn btn-primary cookie-btn">Accept</button>
+                <button type="button" id="cookie-accept" class="btn btn-primary cookie-btn cookie-btn--accept">Accept &amp; continue</button>
+                <button type="button" id="cookie-deny" class="cookie-banner__reject">Essential cookies only</button>
             </div>
         </div>
     </div>
@@ -99,7 +104,7 @@ PAGES = [
   "facts":[("Setting","Residential & home aged care"),("Risk level","High — vulnerable residents"),("Key pathogen","Listeria monocytogenes"),("FSS required?","Yes — under Standard 3.2.2A"),("Units","SITXFSA005 / SITXFSA006"),("Cert validity","5 years (FSS)")],
   "sections":[
     ("Why aged care is high-risk","<p>The biggest concern is <strong>Listeria monocytogenes</strong>, which can grow even at fridge temperatures and causes severe illness in the elderly. High-risk foods such as soft cheeses, pâté, cold deli meats, pre-cut fruit, raw seafood and unpasteurised dairy are often restricted or avoided in aged-care menus. Many residents also need <strong>texture-modified meals</strong> (minced or pureed), which involve extra handling steps where contamination and temperature abuse can creep in.</p>"),
-    ("Who must be trained","<p>Anyone who handles food — kitchen staff, catering assistants, and care workers who plate or serve meals — needs food safety skills and knowledge. The facility must also appoint a certified <strong>Food Safety Supervisor</strong> who is reasonably available during food operations to guide staff, monitor temperatures and act when something is unsafe. Read our guide to <a href=\"/blog/food-safety-training-aged-care-childcare-2023/\">Standard 3.2.2A for aged care, childcare &amp; schools</a>.</p>"),
+    ("Who must be trained","<p>Anyone who handles food — kitchen staff, catering assistants, and care workers who plate or serve meals — needs food safety skills and knowledge. The facility must also appoint a certified <strong>Food Safety Supervisor</strong> who is reasonably available during food operations to guide staff, monitor temperatures and act when something is unsafe. Read our guide to <a href=\"/blog/food-safety-training-aged-care-childcare/\">Standard 3.2.2A for aged care, childcare &amp; schools</a>.</p>"),
     ("Key controls in an aged-care kitchen","<p>Strict temperature control (cold &le;5&deg;C, hot &ge;60&deg;C), the 2-hour/4-hour rule, thorough cooking to 75&deg;C, rapid cooling, and careful allergen and texture-modified meal handling. Cleaning and sanitising, dating of prepared foods and good personal hygiene round out the daily controls. Use our <a href=\"/temperature-danger-zone-checker.html\">danger-zone checker</a> to revise the temperatures.</p>"),
     ("How to get certified","<p>Your official certificate must be issued by a Registered Training Organisation (RTO). Practice tests like this one build confidence, but only an accredited RTO can assess and certify you. <a href=\"/find-a-course.html\" rel=\"sponsored nofollow\">Compare accredited courses &rarr;</a></p>"),
   ],
@@ -278,7 +283,7 @@ def build_page(p):
     <section class="home-editorial-hero" aria-labelledby="job-hero-title">
         <div class="container home-editorial-hero__inner">
             <p class="home-editorial-hero__badge">Food safety by industry</p>
-            <h1 id="job-hero-title" class="home-editorial-hero__title">Food Safety Training<br><span class="home-editorial-hero__accent">{p["accent"]}</span></h1>
+            <h1 id="job-hero-title" class="home-editorial-hero__title">Food Safety Training <br><span class="home-editorial-hero__accent">{p["accent"]}</span></h1>
             <p class="home-editorial-hero__meta">{p["meta"]}</p>
         </div>
     </section>

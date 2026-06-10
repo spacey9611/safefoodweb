@@ -64,7 +64,7 @@ def apply_bylines():
 
 
 def write_sitemap():
-    today = "2026-06-05"
+    today = "2026-06-10"
     lines = ['<?xml version="1.0" encoding="UTF-8"?>',
              '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for url in S.urls():

@@ -21,31 +21,63 @@
       gtag('js', new Date());
       gtag('config', 'G-N69BCEQGQ2');
     </script>
-    <script>
-      try {
-        if (localStorage.getItem("fs_cookie_accepted_v1") === "true") {
-          document.documentElement.classList.add("cookies-accepted");
+<script>
+      (function () {
+        try {
+          var c = localStorage.getItem("fs_cookie_consent_v2");
+          if (c === "accepted" || c === "denied") {
+            document.documentElement.classList.add("cookies-resolved");
+            if (c === "accepted") document.documentElement.classList.add("cookies-accepted");
+            return;
+          }
+          if (localStorage.getItem("fs_cookie_accepted_v1") === "true") {
+            document.documentElement.classList.add("cookies-resolved", "cookies-accepted");
+            return;
+          }
+          document.documentElement.classList.add("cookie-banner-open");
+        } catch (e) {
+          document.documentElement.classList.add("cookie-banner-open");
         }
-      } catch (e) {}
+      })();
     </script>
 
-    <title>About | Food Safety Practice AU</title>
-    <meta name="description" content="About Food Safety Practice AU: free SITXFSA005 practice tests.">
+    <title>About Food Safety Practice AU | How We Build Our Tests</title>
+    <meta name="description" content="Who we are, how our 650 SITXFSA005 practice questions are written and reviewed against the Australian Food Standards Code, and our editorial standards.">
     <meta name="robots" content="index, follow">
-    <meta name="author" content="Food Safety Practice AU">
+    <meta name="author" content="Food Safety Practice AU Editorial Team">
     <link rel="canonical" href="https://food-safety-practice-test-au.com/about.html">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://food-safety-practice-test-au.com/about.html">
-    <meta property="og:title" content="About | Food Safety Practice AU">
-    <meta property="og:description" content="About Food Safety Practice AU: free SITXFSA005 practice tests.">
+    <meta property="og:title" content="About Food Safety Practice AU — How We Build Our Practice Tests">
+    <meta property="og:description" content="Our mission, methodology, sourcing and editorial standards behind 650 free Australian food safety practice questions.">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="stylesheet" href="/style.css?v=9">
+    <link rel="stylesheet" href="/style.css?v=13">
 
     <meta property="og:image" content="https://food-safety-practice-test-au.com/og-default.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://food-safety-practice-test-au.com/og-default.png">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://food-safety-practice-test-au.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "About",
+      "item": "https://food-safety-practice-test-au.com/about.html"
+    }
+  ]
+}
+    </script>
 </head>
 <body>
     <header class="site-header">
@@ -66,7 +98,7 @@
                 <a href="/temperature-danger-zone-checker.html" class="nav-link">Danger Zone Tool</a>
                 <a href="/tips.html" class="nav-link">Exam Tips</a>
                 <a href="/find-a-course.html" class="nav-link">Find a Course</a>
-                <a href="/blog/" class="nav-link">Blog</a>
+                <a href="/blog" class="nav-link">Blog</a>
                 <a href="/flashcards.html" class="nav-link">Flashcards</a>
                 <a href="/glossary.html" class="nav-link">Glossary</a>
                     </nav>
@@ -91,12 +123,40 @@
             </div>
         </div>
     </header>
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><span aria-current="page">About</span></li></ol></nav>
+    </div>
 
     <main class="container"><article class="content-page">
     <h1>About Food Safety Practice AU</h1>
-    <p>We provide free food safety practice tests for Australian food handlers and Food Safety Supervisors preparing for SITXFSA005 and SITXFSA006 assessments.</p>
-    <p>We are not affiliated with FSANZ, state health departments, or any government body.</p>
-    <p class="byline" data-byline style="color:var(--muted);font-size:.85rem;border-top:1px solid var(--line);margin-top:22px;padding-top:14px;">Written and reviewed by the Food Safety Practice AU editorial team. Last reviewed June 2026. Based on the <a href="https://www.foodstandards.gov.au/" target="_blank" rel="noopener">Food Standards Code (FSANZ)</a> and Australian state/territory food authorities. General guidance only &mdash; not official certification.</p>
+
+    <p class="lead">Food Safety Practice AU is a free study resource that helps Australian food handlers and Food Safety Supervisors prepare for their food safety assessment &mdash; the <strong>SITXFSA005 Use hygienic practices for food safety</strong> and <strong>SITXFSA006 Participate in safe food handling practices</strong> units, plus the state-based food handler and supervisor requirements that sit on top of them.</p>
+
+    <p>We built this site because the official assessment matters but the preparation around it is often thin, scattered, or locked behind paywalls. Workers in hospitality, retail, aged care, childcare and school canteens are frequently asked to sit a food safety test at short notice, with little idea of what the questions look like. Our goal is simple: give every food worker in Australia a realistic, no-sign-up way to practise until they walk into the real assessment confident.</p>
+
+    <h2>What we offer</h2>
+    <p>The core of the site is a bank of <strong>650 exam-style questions</strong> covering the twelve knowledge areas assessed in Australian food safety units: food standards and law, the role of the food handler, temperature control and the danger zone, cross-contamination, personal hygiene, cleaning and sanitising, allergen management, food storage, pest control, HACCP and food safety programs, Food Safety Supervisor duties, and high-risk foods. Around 40% of the bank is written as workplace <em>scenario</em> questions &mdash; the situational style that real assessors favour &mdash; rather than simple recall. Every question gives instant feedback and a plain-English explanation, so practising doubles as learning.</p>
+    <p>Alongside the practice test we publish a <a href="/guide.html">study guide</a>, <a href="/tips.html">exam tips</a>, a <a href="/glossary.html">food safety glossary</a>, a <a href="/temperature-danger-zone-checker.html">temperature danger-zone checker</a>, printable <a href="/flashcards.html">flashcards</a>, and state-by-state pages explaining the specific rules in <a href="/food-safety-nsw.html">NSW</a>, VIC, QLD, WA, SA, ACT, NT and TAS.</p>
+
+    <h2>How our questions are written and reviewed</h2>
+    <p>Every question is written in-house by our editorial team and mapped to the performance criteria and required knowledge of the SITXFSA005/006 units and the <a href="https://www.foodstandards.gov.au/" target="_blank" rel="noopener">Food Standards Code (Standards 3.2.2, 3.2.2A and 3.2.3)</a>. Our process is:</p>
+    <ul>
+        <li><strong>Source first.</strong> We draft each question against a primary source &mdash; the Food Standards Code, FSANZ guidance, or the published requirements of the relevant state or territory food authority &mdash; not against other quiz sites.</li>
+        <li><strong>Write for the assessment, not for trivia.</strong> Temperatures, timeframes and procedures match what Australian assessors actually test (for example, the 5&nbsp;&deg;C&ndash;60&nbsp;&deg;C danger zone and the 2-hour/4-hour rule), and we favour realistic workplace scenarios.</li>
+        <li><strong>Explain every answer.</strong> Each item includes the reasoning and the rule behind the correct option, so a wrong answer becomes a learning moment.</li>
+        <li><strong>Review and date.</strong> Content is reviewed against current standards and carries a "last reviewed" date. When rules change &mdash; such as the September 2025 strengthening of FSS and food-handler training requirements in NSW &mdash; we update the affected pages.</li>
+    </ul>
+
+    <h2>Our editorial standards</h2>
+    <p>We aim to be accurate, current and genuinely useful. Where Australian law differs from overseas practice (US ServSafe temperatures, for instance, are in Fahrenheit and reflect a different danger zone), we use the Australian figures. Where requirements differ by state, we say so rather than giving a single national answer that would be wrong for half our readers. We correct mistakes promptly &mdash; if you spot one, our <a href="/legal.html#contact">contact page</a> is the fastest way to tell us.</p>
+
+    <h2>Who this is for</h2>
+    <p>Cooks, kitchen hands, baristas, café and restaurant staff, supermarket and deli workers, aged-care and childcare food handlers, school-canteen volunteers, and anyone stepping up to the Food Safety Supervisor role. Whether you are sitting an RTO assessment, an employer induction quiz, or a council-required course, the knowledge tested is the same &mdash; and practising it here is free.</p>
+
+    <h2>What we are &mdash; and what we are not</h2>
+    <p>Food Safety Practice AU is an independent study aid. <strong>We are not a Registered Training Organisation (RTO)</strong>, and completing our practice tests does <strong>not</strong> issue a nationally recognised Statement of Attainment or any official certificate. To get certified you must complete an accredited course with an RTO; our <a href="/find-a-course.html">find a course</a> page explains your options. We are not affiliated with FSANZ, state or territory health departments, or any government body. Our content is written in line with the SITXFSA005/006 competency standards to mirror what you will be assessed on, but it is general guidance only.</p>
+
+    <p class="byline" data-byline style="color:var(--muted);font-size:.85rem;border-top:1px solid var(--line);margin-top:28px;padding-top:14px;">Written and maintained by the Food Safety Practice AU editorial team. Last reviewed June 2026. Based on the <a href="https://www.foodstandards.gov.au/" target="_blank" rel="noopener">Food Standards Code (FSANZ)</a> and Australian state/territory food authorities. General guidance only &mdash; not official certification.</p>
         </article></main>
     <footer class="footer">
         <div class="container">
@@ -117,16 +177,22 @@
         </div>
     </footer>
 
-    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie notice">
+    <div id="cookie-banner-backdrop" class="cookie-banner-backdrop" aria-hidden="true"></div>
+    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-modal="true" aria-labelledby="cookie-banner-title" aria-live="polite">
         <div class="cookie-banner__content">
-            <p>This site uses cookies and similar technologies to improve your experience and support analytics and advertising. By continuing to use this site, you agree to our <a href="/legal.html#privacy">Privacy Policy</a>.</p>
+            <div class="cookie-banner__copy">
+                <p id="cookie-banner-title"><strong>Accept cookies to continue</strong></p>
+                <p class="cookie-banner__sub">We use cookies to keep the site running and to understand how people use our free practice tests. Tap accept to start studying. <a href="/legal.html#privacy">Privacy Policy</a></p>
+            </div>
             <div class="cookie-banner__actions">
-                <button id="cookie-accept" class="btn btn-primary cookie-btn">Accept</button>
+                <button type="button" id="cookie-accept" class="btn btn-primary cookie-btn cookie-btn--accept">Accept &amp; continue</button>
+                <button type="button" id="cookie-deny" class="cookie-banner__reject">Essential cookies only</button>
             </div>
         </div>
     </div>
     <script src="faq-accordion.js" defer></script>
         <script src="cookie-consent.js" defer></script>
     <script src="site-ui.js" defer></script>
+    <script src="/ads.js" defer></script>
 </body>
 </html>

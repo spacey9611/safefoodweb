@@ -57,6 +57,7 @@ KEYWORD_PAGES = [
     "/food-handler-practice-test.html",
     "/food-safety-supervisor-practice-test.html",
     "/sitxfsa005-questions-and-answers.html",
+    "/dofoodsafely-vs-free-practice-test.html",
 ]
 
 # ── Tools / guides / utility (indexable) ──────────────────────────────────
@@ -81,7 +82,7 @@ BLOG_SLUGS = [
     "temperature-danger-zone-australia-guide",
     "food-safety-certificate-cost-australia-by-state",
     "how-to-get-food-safety-certificate-online-australia",
-    "food-safety-training-aged-care-childcare-2023",
+    "food-safety-training-aged-care-childcare",
     "10-priority-allergens-australia-food-safety-exam",
     "food-safety-certificate-expire-renewal-australia",
     "haccp-basics-food-handlers-australia",

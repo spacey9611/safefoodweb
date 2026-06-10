@@ -2,11 +2,16 @@
 """Build high-intent keyword landing pages (FSS test, food handler test, SITXFSA005 Q&A).
 Run: python3 tools/build_keyword_pages.py
 """
-import json, pathlib
+import json, pathlib, sys
 ROOT = pathlib.Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT / "tools"))
+from cookie_snippets import COOKIE_HEAD, GA4_TAG, CONSENT_HEAD, cookie_banner_html
+
+CSS_VER = "13"
+DOMAIN = "https://food-safety-practice-test-au.com"
 
 NAV = [("/","Practice Test"),("/guide.html","Study Guide"),("/temperature-danger-zone-checker.html","Danger Zone Tool"),
-       ("/tips.html","Exam Tips"),("/find-a-course.html","Find a Course"),("/blog/","Blog"),
+       ("/tips.html","Exam Tips"),("/find-a-course.html","Find a Course"),("/blog","Blog"),
        ("/flashcards.html","Flashcards"),("/glossary.html","Glossary")]
 STATES = [("nsw","NSW"),("vic","VIC"),("qld","QLD"),("wa","WA"),("sa","SA"),("act","ACT"),("nt","NT"),("tas","TAS")]
 
@@ -43,7 +48,7 @@ def header():
         </div>
     </header>'''
 
-FOOTER = '''    <footer class="footer">
+FOOTER_HTML = '''    <footer class="footer">
         <div class="container">
             <p>&copy; 2026 Food Safety Practice AU</p>
             <nav class="footer-links">
@@ -60,19 +65,7 @@ FOOTER = '''    <footer class="footer">
             <p class="footer-disclaimer">We may earn a commission if you purchase through links on this site.</p>
             <p class="footer-disclaimer">This page is free practice and educational content only. Your certificate must be issued by a Registered Training Organisation (RTO).</p>
         </div>
-    </footer>
-
-    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie notice">
-        <div class="cookie-banner__content">
-            <p>This site uses cookies and similar technologies to improve your experience and support analytics and advertising. By continuing to use this site, you agree to our <a href="/legal.html#privacy">Privacy Policy</a>.</p>
-            <div class="cookie-banner__actions">
-                <button id="cookie-accept" class="btn btn-primary cookie-btn">Accept</button>
-            </div>
-        </div>
-    </div>
-    <script src="faq-accordion.js" defer></script>
-    <script src="cookie-consent.js" defer></script>
-    <script src="site-ui.js" defer></script>'''
+    </footer>'''
 
 CROSS = '''            <section class="guide-section">
                 <h2>More free practice</h2>
@@ -83,6 +76,7 @@ CROSS = '''            <section class="guide-section">
                     <a href="/guide.html" class="topic-link-card">Study Guide</a>
                     <a href="/temperature-danger-zone-checker.html" class="topic-link-card">Danger Zone Tool</a>
                     <a href="/flashcards.html" class="topic-link-card">Flashcards</a>
+                    <a href="/dofoodsafely-vs-free-practice-test.html" class="topic-link-card">DoFoodSafely vs Free Practice Test</a>
                 </div>
             </section>'''
 
@@ -165,6 +159,34 @@ PAGES = [
   "related":[("/food-handler-practice-test.html","Food Handler Practice Test"),("/topic-temperature.html","Temperature & Danger Zone"),("/topic-allergens.html","Allergens"),("/guide.html","Study Guide")],
   "samples":True,
  },
+ {
+  "slug":"dofoodsafely-vs-free-practice-test.html",
+  "title":"DoFoodSafely vs Free Practice Test 2026 | VIC & All States",
+  "desc":"DoFoodSafely is VIC-only with 30 questions. Compare DoFoodSafely to our free all-states food safety practice test with 650 SITXFSA005 questions.",
+  "ogt":"DoFoodSafely vs Free Food Safety Practice Test",
+  "accent":"DoFoodSafely vs Free Practice Test",
+  "meta":"VIC DoFoodSafely compared · 650 questions · all 8 states",
+  "breadcrumb":"DoFoodSafely Comparison",
+  "intro":[
+    "Searching for <strong>DoFoodSafely</strong> or the Victorian government food handler quiz? <strong>DoFoodSafely</strong> (health.vic.gov.au) is a free Victorian training tool with about <strong>30 questions</strong> and a certificate for Victoria. It is a solid starting point if you work only in VIC &mdash; but it does not cover other states and offers limited repeat practice.",
+    "This site gives you a <strong>free interactive practice test for all Australian states</strong>: <strong>650 SITXFSA005 exam-style questions</strong>, 12 topic drills, instant explanations, flashcards, and a danger-zone calculator. Use DoFoodSafely for the official VIC certificate path; use us to <em>prepare deeply</em> before any RTO or employer assessment.",
+  ],
+  "facts":[("DoFoodSafely","~30 Q, VIC only"),("This site","650 Q, all states"),("DoFoodSafely cert","VIC food handler"),("Our test","Practice only"),("Best combo","Both if in VIC"),("Cost","Both free")],
+  "sections":[
+    ("DoFoodSafely: what it is","<p><strong>DoFoodSafely</strong> is run by the Victorian Department of Health. It teaches basic food safety and issues a certificate recognised for Victorian food handlers. It is <strong>not available for NSW, QLD, WA, SA, ACT, NT or TAS</strong> &mdash; those states use accredited RTO courses instead. See our <a href=\"/food-safety-vic.html\">Food Safety Practice Test VIC</a> page for state-specific rules.</p>"),
+    ("Where our free practice test wins","<ul><li><strong>650 questions</strong> vs ~30 &mdash; far more repeat practice before your real assessment</li><li><strong>All 8 states</strong> &mdash; not limited to Victoria</li><li><strong>12 topic drills</strong>, timed exam mode, weak-area review, flashcards</li><li><strong>SITXFSA005 + FSS topics</strong> including HACCP and supervisor duties</li><li><strong>Interactive tools</strong> like the <a href=\"/temperature-danger-zone-checker.html\">temperature danger zone checker</a></li></ul>"),
+    ("Which should you use?","<p><strong>In Victoria:</strong> DoFoodSafely if you need the free VIC certificate pathway, <em>plus</em> our practice test to drill until you score 80%+ before any RTO assessment. <strong>Outside VIC:</strong> skip DoFoodSafely (it does not apply) and use our <a href=\"/\">free practice test</a>, <a href=\"/food-handler-practice-test.html\">food handler test</a>, or <a href=\"/find-a-course.html\">find an accredited course</a> in your state.</p>"),
+  ],
+  "faqs":[
+    ("Is DoFoodSafely the same as SITXFSA005?","DoFoodSafely covers similar food safety knowledge for Victorian food handlers but is a Victorian program. SITXFSA005 is the nationally recognised unit issued by RTOs across Australia."),
+    ("Can I use DoFoodSafely if I work in NSW or QLD?","DoFoodSafely is designed for Victoria. Other states require training through accredited RTOs. Use our all-states practice test to prepare regardless of where you work."),
+    ("Is this site affiliated with DoFoodSafely?","No. We are an independent free practice resource, not affiliated with the Victorian Department of Health or DoFoodSafely."),
+    ("Does your practice test replace DoFoodSafely?","No. Our site is practice and revision only. DoFoodSafely can issue a VIC certificate; our test helps you pass assessments with confidence."),
+    ("How many questions does DoFoodSafely have?","DoFoodSafely has approximately 30 questions. Our free bank has 650 unique questions with 40 per practice run."),
+  ],
+  "related":[("/food-safety-vic.html","Food Safety VIC"),("/food-handler-practice-test.html","Food Handler Test"),("/sitxfsa005-questions-and-answers.html","SITXFSA005 Q&amp;A"),("/guide.html","Study Guide")],
+  "samples":False,
+ },
 ]
 
 # 10 original worked examples for the SITXFSA005 Q&A page
@@ -193,55 +215,40 @@ def build(p):
         samples = f'<section class="guide-section"><h2>10 SITXFSA005 sample questions &amp; answers</h2>\n                {items}\n            </section>'
     related = "\n                ".join(f'<a href="{h}" class="topic-link-card">{t}</a>' for h,t in p["related"])
     faqs = "\n                ".join(f'<dt class="faq-question" tabindex="0" aria-expanded="false"><span>{q}</span><span class="faq-toggle">+</span></dt>\n                <dd class="faq-answer" hidden>{a}</dd>' for q,a in p["faqs"])
-    schema = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q,a in p["faqs"]]}
+    faq_schema = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q,a in p["faqs"]]}
+    crumb_name = p.get("breadcrumb") or p["accent"].replace("&amp;", "&")
+    breadcrumb = {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+        {"@type":"ListItem","position":1,"name":"Home","item":f"{DOMAIN}/"},
+        {"@type":"ListItem","position":2,"name":crumb_name,"item":f"{DOMAIN}/{p['slug']}"}]}
     html = f'''<!DOCTYPE html>
 <html lang="en-AU">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){{dataLayer.push(arguments);}}
-      gtag("consent", "default", {{
-        "ad_storage": "denied",
-        "ad_user_data": "denied",
-        "ad_personalization": "denied",
-        "analytics_storage": "denied",
-        "wait_for_update": 500
-      }});
-      dataLayer.push({{ "event": "default_consent_set" }});
-    </script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N69BCEQGQ2"></script>
-    <script>
-      gtag('js', new Date());
-      gtag('config', 'G-N69BCEQGQ2');
-    </script>
-    <script>
-      try {{
-        if (localStorage.getItem("fs_cookie_accepted_v1") === "true") {{
-          document.documentElement.classList.add("cookies-accepted");
-        }}
-      }} catch (e) {{}}
-    </script>
+{CONSENT_HEAD}
+{GA4_TAG}
+{COOKIE_HEAD}
     <title>{p["title"]}</title>
     <meta name="description" content="{p["desc"]}">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Food Safety Practice AU">
-    <link rel="canonical" href="https://food-safety-practice-test-au.com/{p["slug"]}">
+    <link rel="canonical" href="{DOMAIN}/{p["slug"]}">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://food-safety-practice-test-au.com/{p["slug"]}">
+    <meta property="og:url" content="{DOMAIN}/{p["slug"]}">
     <meta property="og:title" content="{p["ogt"]}">
     <meta property="og:description" content="{p["desc"]}">
-    <meta property="og:image" content="https://food-safety-practice-test-au.com/og-default.png">
+    <meta property="og:image" content="{DOMAIN}/og-default.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://food-safety-practice-test-au.com/og-default.png">
+    <meta name="twitter:image" content="{DOMAIN}/og-default.png">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="stylesheet" href="/style.css?v=7">
+    <link rel="stylesheet" href="/style.css?v={CSS_VER}">
     <script type="application/ld+json">
-{json.dumps(schema, indent=2, ensure_ascii=True)}
+{json.dumps(faq_schema, indent=2, ensure_ascii=True)}
+    </script>
+    <script type="application/ld+json">
+{json.dumps(breadcrumb, indent=2, ensure_ascii=True)}
     </script>
 </head>
 <body>
@@ -287,9 +294,15 @@ def build(p):
                 <a href="/find-a-course.html" class="btn btn-secondary affiliate-cta" rel="sponsored nofollow">Find an accredited course &rarr;</a>
                 <p class="affiliate-disclosure">We may earn a commission from course providers, at no extra cost to you.</p>
             </div>
+        <p class="byline" data-byline style="color:var(--muted);font-size:.85rem;border-top:1px solid var(--line);margin-top:22px;padding-top:14px;">Written and reviewed by the Food Safety Practice AU editorial team. Last reviewed June 2026. Based on the <a href="https://www.foodstandards.gov.au/" target="_blank" rel="noopener">Food Standards Code (FSANZ)</a> and Australian state/territory food authorities. General guidance only &mdash; not official certification.</p>
         </article>
     </main>
-{FOOTER}
+{FOOTER_HTML}
+{cookie_banner_html()}
+    <script src="faq-accordion.js" defer></script>
+    <script src="cookie-consent.js" defer></script>
+    <script src="site-ui.js" defer></script>
+    <script src="/ads.js" defer></script>
 </body>
 </html>
 '''

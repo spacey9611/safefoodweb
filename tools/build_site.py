@@ -519,11 +519,16 @@ def footer_html():
         </div>
     </footer>
 
-    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie notice">
+    <div id="cookie-banner-backdrop" class="cookie-banner-backdrop" aria-hidden="true"></div>
+    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-modal="true" aria-labelledby="cookie-banner-title" aria-live="polite">
         <div class="cookie-banner__content">
-            <p>This site uses cookies and similar technologies to improve your experience and support analytics and advertising. By continuing to use this site, you agree to our <a href="legal.html#privacy">Privacy Policy</a>.</p>
+            <div class="cookie-banner__copy">
+                <p id="cookie-banner-title"><strong>Accept cookies to continue</strong></p>
+                <p class="cookie-banner__sub">We use cookies to keep the site running and to understand how people use our free practice tests. Tap accept to start studying. <a href="/legal.html#privacy">Privacy Policy</a></p>
+            </div>
             <div class="cookie-banner__actions">
-                <button id="cookie-accept" class="btn btn-primary cookie-btn">Accept</button>
+                <button type="button" id="cookie-accept" class="btn btn-primary cookie-btn cookie-btn--accept">Accept &amp; continue</button>
+                <button type="button" id="cookie-deny" class="cookie-banner__reject">Essential cookies only</button>
             </div>
         </div>
     </div>"""
@@ -749,7 +754,7 @@ def write_index():
     <section class="home-editorial-hero" aria-labelledby="home-hero-title">
         <div class="container home-editorial-hero__inner">
             <p class="home-editorial-hero__badge">SITXFSA005 · All Australian states</p>
-            <h1 id="home-hero-title" class="home-editorial-hero__title">Pass Your Food Safety Test<br><span class="home-editorial-hero__accent">Free Practice Test: {QUESTION_COUNT} Questions</span></h1>
+            <h1 id="home-hero-title" class="home-editorial-hero__title">Pass Your Food Safety Test <br><span class="home-editorial-hero__accent">Free Practice Test: {QUESTION_COUNT} Questions</span></h1>
             <ul class="home-editorial-hero__list">
                 <li><strong>{QUESTION_COUNT}+</strong> exam-style questions (40 per attempt)</li>
                 <li><strong>Instant feedback</strong> with explanations for every answer</li>
@@ -857,7 +862,7 @@ def write_state_page(code, info):
     <section class="home-editorial-hero" aria-labelledby="state-hero-title">
         <div class="container home-editorial-hero__inner">
             <p class="home-editorial-hero__badge">{info["abbr"]} · {info["regulator"]}</p>
-            <h1 id="state-hero-title" class="home-editorial-hero__title">Food Safety Practice Test<br><span class="home-editorial-hero__accent">{info["name"]} ({info["abbr"]})</span></h1>
+            <h1 id="state-hero-title" class="home-editorial-hero__title">Food Safety Practice Test <br><span class="home-editorial-hero__accent">{info["name"]} ({info["abbr"]})</span></h1>
             <ul class="home-editorial-hero__list">
                 <li><strong>{QUESTION_COUNT}+</strong> exam-style questions (40 per attempt)</li>
                 <li>Aligned with <strong>{info["regulator"]}</strong> requirements</li>
@@ -1254,7 +1259,7 @@ def write_sitemap():
         "temperature-danger-zone-australia-guide",
         "food-safety-certificate-cost-australia-by-state",
         "how-to-get-food-safety-certificate-online-australia",
-        "food-safety-training-aged-care-childcare-2023",
+        "food-safety-training-aged-care-childcare",
         "10-priority-allergens-australia-food-safety-exam",
         "food-safety-certificate-expire-renewal-australia",
         "haccp-basics-food-handlers-australia",

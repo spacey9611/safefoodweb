@@ -21,12 +21,24 @@
       gtag('js', new Date());
       gtag('config', 'G-N69BCEQGQ2');
     </script>
-    <script>
-      try {
-        if (localStorage.getItem("fs_cookie_accepted_v1") === "true") {
-          document.documentElement.classList.add("cookies-accepted");
+<script>
+      (function () {
+        try {
+          var c = localStorage.getItem("fs_cookie_consent_v2");
+          if (c === "accepted" || c === "denied") {
+            document.documentElement.classList.add("cookies-resolved");
+            if (c === "accepted") document.documentElement.classList.add("cookies-accepted");
+            return;
+          }
+          if (localStorage.getItem("fs_cookie_accepted_v1") === "true") {
+            document.documentElement.classList.add("cookies-resolved", "cookies-accepted");
+            return;
+          }
+          document.documentElement.classList.add("cookie-banner-open");
+        } catch (e) {
+          document.documentElement.classList.add("cookie-banner-open");
         }
-      } catch (e) {}
+      })();
     </script>
 
     <title>Food Safety Glossary 2026 | Key Terms A–Z</title>
@@ -39,7 +51,7 @@
     <meta property="og:title" content="Food Safety Glossary 2026 | Key Terms A–Z">
     <meta property="og:description" content="Australian food safety glossary: danger zone, HACCP, FSS, SITXFSA005, cross contamination and more.">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="stylesheet" href="/style.css?v=9">
+    <link rel="stylesheet" href="/style.css?v=13">
 
     <meta property="og:image" content="https://food-safety-practice-test-au.com/og-default.png">
     <meta property="og:image:width" content="1200">
@@ -58,6 +70,26 @@
         {"@type":"DefinedTerm","name":"Food Safety Supervisor","description":"A trained person responsible for overseeing food safety on site (SITXFSA006)."}
       ]
     }
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://food-safety-practice-test-au.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Glossary",
+      "item": "https://food-safety-practice-test-au.com/glossary.html"
+    }
+  ]
+}
     </script>
 </head>
 <body>
@@ -79,7 +111,7 @@
                 <a href="/temperature-danger-zone-checker.html" class="nav-link">Danger Zone Tool</a>
                 <a href="/tips.html" class="nav-link">Exam Tips</a>
                 <a href="/find-a-course.html" class="nav-link">Find a Course</a>
-                <a href="/blog/" class="nav-link">Blog</a>
+                <a href="/blog" class="nav-link">Blog</a>
                 <a href="/flashcards.html" class="nav-link">Flashcards</a>
                 <a href="/glossary.html" class="nav-link nav-link--active">Glossary</a>
                     </nav>
@@ -104,22 +136,83 @@
             </div>
         </div>
     </header>
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><span aria-current="page">Glossary</span></li></ol></nav>
+    </div>
 
     <main class="container">
         <article class="content-page">
             <h1>Food Safety Glossary</h1>
             <p>This glossary explains the key food safety terms you will meet while studying for <strong>SITXFSA005</strong> and <strong>SITXFSA006</strong> in Australia. Understanding the language &mdash; not just memorising it &mdash; makes the rest of your study far easier, because most exam questions are really testing whether you understand these core concepts. Use it as a quick reference while you work through the <a href="/guide.html">study guide</a>, the <a href="/">practice test</a> or the <a href="/flashcards.html">flashcards</a>. Each definition is written in plain English and links back to the topics that matter most for your assessment, from the temperature danger zone to HACCP and the role of a Food Safety Supervisor.</p>
-            <dl class="glossary-list"><dt><strong>CCP</strong></dt><dd>Critical Control Point — a step where control is essential to food safety.</dd>
-<dt><strong>Cross contamination</strong></dt><dd>Transfer of harmful bacteria or allergens from one food/surface to another.</dd>
-<dt><strong>Danger zone</strong></dt><dd>5°C to 60°C — temperature range where bacteria multiply rapidly.</dd>
-<dt><strong>FSS</strong></dt><dd>Food Safety Supervisor — trained person responsible for on-site food safety.</dd>
-<dt><strong>FSANZ</strong></dt><dd>Food Standards Australia New Zealand — develops food standards.</dd>
-<dt><strong>HACCP</strong></dt><dd>Hazard Analysis Critical Control Points — systematic food safety management.</dd>
-<dt><strong>Potentially hazardous food</strong></dt><dd>Food that supports bacterial growth; needs temperature control.</dd>
-<dt><strong>SITXFSA005</strong></dt><dd>National unit: Use hygienic practices for food safety (food handler).</dd>
-<dt><strong>SITXFSA006</strong></dt><dd>National unit: Participate in safe food handling practices (FSS).</dd>
-<dt><strong>Sanitise</strong></dt><dd>Reduce microorganisms to safe levels after cleaning.</dd></dl>
-            <div class="content-cta"><a href="/" class="btn btn-primary">Practice test</a></div>
+            <dl class="glossary-list">
+<dt><strong>Acidic food</strong></dt><dd>Food with a low pH (such as citrus, vinegar or pickles). High acidity slows the growth of most food-poisoning bacteria, which is why acidic foods are generally lower-risk.</dd>
+<dt><strong>Allergen</strong></dt><dd>A substance that can trigger an immune reaction in some people. Australia requires priority allergens (peanuts, tree nuts, milk, egg, wheat/gluten, soy, sesame, fish, crustacea/molluscs, lupin and added sulphites) to be declared.</dd>
+<dt><strong>Anaphylaxis</strong></dt><dd>A severe, rapid and potentially fatal allergic reaction. Even a trace of an allergen can cause it, which is why allergens cannot be &ldquo;cooked out&rdquo; and accurate ingredient information is critical.</dd>
+<dt><strong>Approved supplier</strong></dt><dd>A supplier a food business trusts to provide safe food, often with agreed standards for transport temperature and traceability.</dd>
+<dt><strong>Bacteria</strong></dt><dd>Microscopic single-celled organisms. Some are harmless or useful, but pathogenic bacteria such as <em>Salmonella</em> and <em>Listeria</em> cause food poisoning when allowed to multiply.</dd>
+<dt><strong>Best-before date</strong></dt><dd>Indicates quality, not safety. Food may legally be sold after its best-before date if it is still fit to eat, unlike a use-by date.</dd>
+<dt><strong>Biofilm</strong></dt><dd>A layer of bacteria that builds up and sticks to surfaces or equipment. It resists cleaning, which is why thorough cleaning before sanitising matters.</dd>
+<dt><strong>Calibration</strong></dt><dd>Checking and adjusting a thermometer so it reads accurately &mdash; for example using iced water (0&nbsp;&deg;C) or boiling water (100&nbsp;&deg;C). Inaccurate probes give false confidence about temperature control.</dd>
+<dt><strong>CCP (Critical Control Point)</strong></dt><dd>A step in a process where control is essential to prevent, eliminate or reduce a food safety hazard &mdash; cooking to 75&nbsp;&deg;C is the classic example.</dd>
+<dt><strong>Chemical contamination</strong></dt><dd>Contamination of food by chemicals such as cleaning agents, sanitisers, pesticides or machine oil. Store chemicals well away from food.</dd>
+<dt><strong>Cleaning</strong></dt><dd>Removing visible dirt, grease and food residue using detergent and water. Cleaning must happen <em>before</em> sanitising.</dd>
+<dt><strong>Cold chain</strong></dt><dd>Keeping chilled food at or below 5&nbsp;&deg;C continuously from delivery through storage, preparation and display.</dd>
+<dt><strong>Contamination</strong></dt><dd>The presence of anything harmful in food &mdash; biological (microbes), chemical, or physical (foreign matter).</dd>
+<dt><strong>Corrective action</strong></dt><dd>The step taken when monitoring shows a critical limit has not been met &mdash; for example reheating, discarding food, or adjusting equipment.</dd>
+<dt><strong>Critical limit</strong></dt><dd>A measurable boundary that must be met at a CCP, such as a minimum cooking temperature or a maximum time in the danger zone.</dd>
+<dt><strong>Cross-contamination</strong></dt><dd>The transfer of harmful bacteria or allergens from one food, surface or person to another &mdash; commonly from raw food to ready-to-eat food.</dd>
+<dt><strong>Danger zone</strong></dt><dd>5&nbsp;&deg;C to 60&nbsp;&deg;C &mdash; the temperature range in which food-poisoning bacteria multiply most rapidly. Minimise the time food spends here.</dd>
+<dt><strong>Decanting</strong></dt><dd>Transferring food from its original container into another. Decanted food should be labelled and dated to avoid confusion and to support FIFO.</dd>
+<dt><strong>Detergent</strong></dt><dd>A cleaning agent that removes grease and dirt. It cleans but does not sanitise.</dd>
+<dt><strong>Environmental Health Officer (EHO)</strong></dt><dd>A council or government officer who inspects food businesses, investigates complaints and enforces the Food Standards Code.</dd>
+<dt><strong>FIFO (First In, First Out)</strong></dt><dd>A stock-rotation method where older stock is used before newer stock, reducing waste and the risk of using expired food.</dd>
+<dt><strong>Food Act</strong></dt><dd>State and territory legislation that gives the Food Standards Code legal force and sets out offences and penalties for unsafe food handling.</dd>
+<dt><strong>Food authority</strong></dt><dd>The state or territory body responsible for food regulation &mdash; for example the NSW Food Authority or Queensland Health.</dd>
+<dt><strong>Food handler</strong></dt><dd>Anyone who works with food or food-contact surfaces &mdash; preparing, cooking, serving, packing, displaying or cleaning.</dd>
+<dt><strong>Food poisoning</strong></dt><dd>Illness caused by eating contaminated food. Symptoms include nausea, vomiting, diarrhoea and cramps, and can be serious for vulnerable people.</dd>
+<dt><strong>Food premises</strong></dt><dd>Any place where food is handled for sale. Premises must be designed and maintained to allow safe food handling (Standard 3.2.3).</dd>
+<dt><strong>Food recall</strong></dt><dd>The removal of unsafe food from sale and from customers, coordinated with the relevant authority.</dd>
+<dt><strong>Food safety program</strong></dt><dd>A documented, systematic plan (often HACCP-based) that identifies and controls food safety hazards in a business.</dd>
+<dt><strong>Food Safety Supervisor (FSS)</strong></dt><dd>A trained, certified person responsible for overseeing food safety on site. Many businesses are legally required to have one; certification generally renews every five years.</dd>
+<dt><strong>Food Standards Code</strong></dt><dd>The set of standards governing food in Australia and New Zealand, including Standards 3.2.2, 3.2.2A and 3.2.3 for food businesses.</dd>
+<dt><strong>Foreign matter</strong></dt><dd>Physical contaminants such as glass, metal, plastic, hair or jewellery that should never end up in food.</dd>
+<dt><strong>FSANZ</strong></dt><dd>Food Standards Australia New Zealand &mdash; the body that develops the Food Standards Code. It does not enforce it; that is done by states, territories and councils.</dd>
+<dt><strong>Hazard</strong></dt><dd>Anything that could make food unsafe &mdash; biological, chemical or physical.</dd>
+<dt><strong>HACCP</strong></dt><dd>Hazard Analysis and Critical Control Points &mdash; an internationally recognised, preventive food safety management system built on seven principles.</dd>
+<dt><strong>High-risk food</strong></dt><dd>See <em>Potentially hazardous food</em>. Examples include cooked rice, meat, poultry, dairy, eggs, seafood and prepared salads.</dd>
+<dt><strong>Hot holding</strong></dt><dd>Keeping hot food at 60&nbsp;&deg;C or above to keep it out of the danger zone while on display or service.</dd>
+<dt><strong>Incubation period</strong></dt><dd>The time between eating contaminated food and the onset of food-poisoning symptoms &mdash; from hours to days depending on the pathogen.</dd>
+<dt><strong>Listeria</strong></dt><dd>A bacterium that can grow even at refrigeration temperatures and is especially dangerous for pregnant women, the elderly and immune-compromised people.</dd>
+<dt><strong>Microorganism</strong></dt><dd>A microscopic living thing &mdash; bacteria, viruses, yeasts and moulds. Some cause spoilage or illness.</dd>
+<dt><strong>Mould</strong></dt><dd>A type of fungus that grows on food and can produce toxins. Visible mould usually means the food should be discarded.</dd>
+<dt><strong>Pathogen</strong></dt><dd>A microorganism that causes disease, such as <em>Salmonella</em>, <em>Campylobacter</em> or <em>E.&nbsp;coli</em>.</dd>
+<dt><strong>Personal hygiene</strong></dt><dd>The practices food handlers follow to avoid contaminating food &mdash; handwashing, clean clothing, covering cuts, and not working while ill.</dd>
+<dt><strong>Pest</strong></dt><dd>An animal such as a rodent, cockroach, fly or bird that can contaminate food and spread disease.</dd>
+<dt><strong>Physical contamination</strong></dt><dd>Contamination by foreign objects &mdash; glass, metal, hair, fingernails, packaging or jewellery.</dd>
+<dt><strong>Potentially hazardous food (PHF)</strong></dt><dd>Food that must be kept at controlled temperatures to keep it safe because it supports the growth of pathogens or the production of toxins.</dd>
+<dt><strong>Probe thermometer</strong></dt><dd>A thermometer used to measure the internal temperature of food. It must be clean, sanitised and calibrated.</dd>
+<dt><strong>Ready-to-eat food</strong></dt><dd>Food that will be eaten without further cooking, such as salads, sandwiches and cooked meats &mdash; especially vulnerable to cross-contamination.</dd>
+<dt><strong>Reheating</strong></dt><dd>Heating previously cooked food rapidly to 70&nbsp;&deg;C or hotter before hot holding. Food should only be reheated once.</dd>
+<dt><strong>Salmonella</strong></dt><dd>A common food-poisoning bacterium associated with raw poultry, eggs and cross-contamination.</dd>
+<dt><strong>Sanitise</strong></dt><dd>To reduce microorganisms on a clean surface to a safe level using heat or a chemical sanitiser, with the correct contact time.</dd>
+<dt><strong>Sanitiser</strong></dt><dd>A chemical or heat method used to sanitise. It only works on a surface that has already been cleaned.</dd>
+<dt><strong>Shelf life</strong></dt><dd>The length of time food remains safe and of acceptable quality under specified storage conditions.</dd>
+<dt><strong>Single-use</strong></dt><dd>Items designed to be used once and discarded, such as paper towel or disposable gloves, to prevent cross-contamination.</dd>
+<dt><strong>SITXFSA005</strong></dt><dd>The national unit &ldquo;Use hygienic practices for food safety&rdquo; &mdash; the core food handler competency.</dd>
+<dt><strong>SITXFSA006</strong></dt><dd>The national unit &ldquo;Participate in safe food handling practices&rdquo; &mdash; associated with the Food Safety Supervisor role.</dd>
+<dt><strong>Spore</strong></dt><dd>A dormant, highly resistant form some bacteria produce to survive heat and drying. Spores can survive cooking and grow later if food is mishandled.</dd>
+<dt><strong>Staphylococcus aureus</strong></dt><dd>A bacterium often spread from hands, skin and noses to food, where it can produce a heat-stable toxin.</dd>
+<dt><strong>Temperature control</strong></dt><dd>Keeping potentially hazardous food out of the danger zone by chilling, hot holding or cooking to safe temperatures.</dd>
+<dt><strong>Thawing</strong></dt><dd>Defrosting frozen food safely &mdash; in the fridge or under controlled conditions, never left in the danger zone.</dd>
+<dt><strong>2-hour / 4-hour rule</strong></dt><dd>A guide for ready-to-eat PHF in the danger zone: under 2 hours total &rarr; refrigerate or use; 2&ndash;4 hours &rarr; use now; over 4 hours &rarr; discard.</dd>
+<dt><strong>Toxin</strong></dt><dd>A poison produced by some bacteria or moulds. Many toxins are not destroyed by cooking, so prevention is essential.</dd>
+<dt><strong>Use-by date</strong></dt><dd>A safety date. Food must not be sold or eaten after its use-by date because it may be unsafe.</dd>
+<dt><strong>Virus</strong></dt><dd>A tiny infectious agent (such as norovirus or hepatitis A) that can spread through food via poor hygiene. Viruses do not grow in food but can be carried by it.</dd>
+<dt><strong>Vulnerable populations</strong></dt><dd>Groups at higher risk from food poisoning &mdash; the elderly, young children, pregnant women and people with weakened immune systems.</dd>
+<dt><strong>Yeast</strong></dt><dd>A type of fungus that can spoil food, especially sugary or acidic products.</dd>
+<dt><strong>Zoonotic</strong></dt><dd>Describes a disease that can pass between animals and humans, relevant to handling raw meat, poultry and eggs.</dd>
+</dl>
+            <div class="content-cta"><a href="/" class="btn btn-primary">Practice test</a> <a href="/guide.html" class="btn btn-secondary">Study guide</a></div>
         <p class="byline" data-byline style="color:var(--muted);font-size:.85rem;border-top:1px solid var(--line);margin-top:22px;padding-top:14px;">Written and reviewed by the Food Safety Practice AU editorial team. Last reviewed June 2026. Based on the <a href="https://www.foodstandards.gov.au/" target="_blank" rel="noopener">Food Standards Code (FSANZ)</a> and Australian state/territory food authorities. General guidance only &mdash; not official certification.</p>
         </article>
     </main>
@@ -142,16 +235,22 @@
         </div>
     </footer>
 
-    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie notice">
+    <div id="cookie-banner-backdrop" class="cookie-banner-backdrop" aria-hidden="true"></div>
+    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-modal="true" aria-labelledby="cookie-banner-title" aria-live="polite">
         <div class="cookie-banner__content">
-            <p>This site uses cookies and similar technologies to improve your experience and support analytics and advertising. By continuing to use this site, you agree to our <a href="/legal.html#privacy">Privacy Policy</a>.</p>
+            <div class="cookie-banner__copy">
+                <p id="cookie-banner-title"><strong>Accept cookies to continue</strong></p>
+                <p class="cookie-banner__sub">We use cookies to keep the site running and to understand how people use our free practice tests. Tap accept to start studying. <a href="/legal.html#privacy">Privacy Policy</a></p>
+            </div>
             <div class="cookie-banner__actions">
-                <button id="cookie-accept" class="btn btn-primary cookie-btn">Accept</button>
+                <button type="button" id="cookie-accept" class="btn btn-primary cookie-btn cookie-btn--accept">Accept &amp; continue</button>
+                <button type="button" id="cookie-deny" class="cookie-banner__reject">Essential cookies only</button>
             </div>
         </div>
     </div>
     <script src="faq-accordion.js" defer></script>
         <script src="cookie-consent.js" defer></script>
     <script src="site-ui.js" defer></script>
+    <script src="/ads.js" defer></script>
 </body>
 </html>

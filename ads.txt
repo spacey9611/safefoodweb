@@ -1,0 +1,3 @@
+# AdSense is not live yet. After you are approved, replace pub-XXXXXXXXXXXXXXXX
+# with your publisher ID (digits only, no "ca-" prefix) and remove the # below.
+# google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0

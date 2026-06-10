@@ -21,12 +21,24 @@
       gtag('js', new Date());
       gtag('config', 'G-N69BCEQGQ2');
     </script>
-    <script>
-      try {
-        if (localStorage.getItem("fs_cookie_accepted_v1") === "true") {
-          document.documentElement.classList.add("cookies-accepted");
+<script>
+      (function () {
+        try {
+          var c = localStorage.getItem("fs_cookie_consent_v2");
+          if (c === "accepted" || c === "denied") {
+            document.documentElement.classList.add("cookies-resolved");
+            if (c === "accepted") document.documentElement.classList.add("cookies-accepted");
+            return;
+          }
+          if (localStorage.getItem("fs_cookie_accepted_v1") === "true") {
+            document.documentElement.classList.add("cookies-resolved", "cookies-accepted");
+            return;
+          }
+          document.documentElement.classList.add("cookie-banner-open");
+        } catch (e) {
+          document.documentElement.classList.add("cookie-banner-open");
         }
-      } catch (e) {}
+      })();
     </script>
 
     <title>Food Temperature Danger Zone Checker (Australia) 2026</title>
@@ -39,7 +51,7 @@
     <meta property="og:title" content="Food Temperature Danger Zone Checker | Australia">
     <meta property="og:description" content="Interactive danger zone checker, safe cooking temperatures, and the 2-hour/4-hour rule calculator for Australian food handlers.">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="stylesheet" href="/style.css?v=9">
+    <link rel="stylesheet" href="/style.css?v=13">
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -73,6 +85,26 @@
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://food-safety-practice-test-au.com/og-default.png">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://food-safety-practice-test-au.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Danger Zone Tool",
+      "item": "https://food-safety-practice-test-au.com/temperature-danger-zone-checker.html"
+    }
+  ]
+}
+    </script>
 </head>
 <body>
     <header class="site-header">
@@ -93,7 +125,7 @@
                 <a href="/temperature-danger-zone-checker.html" class="nav-link nav-link--active">Danger Zone Tool</a>
                 <a href="/tips.html" class="nav-link">Exam Tips</a>
                 <a href="/find-a-course.html" class="nav-link">Find a Course</a>
-                <a href="/blog/" class="nav-link">Blog</a>
+                <a href="/blog" class="nav-link">Blog</a>
                 <a href="/flashcards.html" class="nav-link">Flashcards</a>
                 <a href="/glossary.html" class="nav-link">Glossary</a>
                     </nav>
@@ -118,11 +150,18 @@
             </div>
         </div>
     </header>
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><span aria-current="page">Danger Zone Tool</span></li></ol></nav>
+    </div>
 
     <section class="home-editorial-hero" aria-labelledby="tool-hero-title">
         <div class="container home-editorial-hero__inner">
             <p class="home-editorial-hero__badge">Free interactive tool · No sign up</p>
-            <h1 id="tool-hero-title" class="home-editorial-hero__title">Food Temperature<br><span class="home-editorial-hero__accent">Danger Zone Checker</span></h1>
+            <h1 id="tool-hero-title" class="home-editorial-hero__title">Food Temperature <br><span class="home-editorial-hero__accent">Danger Zone Checker</span></h1>
+            <figure class="content-figure">
+              <img src="/img/temperature-danger-zone-australia.svg" alt="Australian temperature danger zone chart: below 5C chilled safe, 5C to 60C danger zone, 60C and above hot-hold safe" width="520" height="380" loading="lazy">
+              <figcaption>How the temperature danger zone works in Australia.</figcaption>
+            </figure>
             <p class="home-editorial-hero__meta">Drag the slider · Check safe cooking temps · Use the 2-hour/4-hour calculator</p>
         </div>
     </section>
@@ -239,11 +278,16 @@
         </div>
     </footer>
 
-    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie notice">
+    <div id="cookie-banner-backdrop" class="cookie-banner-backdrop" aria-hidden="true"></div>
+    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-modal="true" aria-labelledby="cookie-banner-title" aria-live="polite">
         <div class="cookie-banner__content">
-            <p>This site uses cookies and similar technologies to improve your experience and support analytics and advertising. By continuing to use this site, you agree to our <a href="/legal.html#privacy">Privacy Policy</a>.</p>
+            <div class="cookie-banner__copy">
+                <p id="cookie-banner-title"><strong>Accept cookies to continue</strong></p>
+                <p class="cookie-banner__sub">We use cookies to keep the site running and to understand how people use our free practice tests. Tap accept to start studying. <a href="/legal.html#privacy">Privacy Policy</a></p>
+            </div>
             <div class="cookie-banner__actions">
-                <button id="cookie-accept" class="btn btn-primary cookie-btn">Accept</button>
+                <button type="button" id="cookie-accept" class="btn btn-primary cookie-btn cookie-btn--accept">Accept &amp; continue</button>
+                <button type="button" id="cookie-deny" class="cookie-banner__reject">Essential cookies only</button>
             </div>
         </div>
     </div>
@@ -290,5 +334,6 @@
         if (hours) { hours.addEventListener('input', updateRule); updateRule(); }
     })();
     </script>
+    <script src="/ads.js" defer></script>
 </body>
 </html>

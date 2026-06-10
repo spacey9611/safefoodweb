@@ -21,12 +21,24 @@
       gtag('js', new Date());
       gtag('config', 'G-N69BCEQGQ2');
     </script>
-    <script>
-      try {
-        if (localStorage.getItem("fs_cookie_accepted_v1") === "true") {
-          document.documentElement.classList.add("cookies-accepted");
+<script>
+      (function () {
+        try {
+          var c = localStorage.getItem("fs_cookie_consent_v2");
+          if (c === "accepted" || c === "denied") {
+            document.documentElement.classList.add("cookies-resolved");
+            if (c === "accepted") document.documentElement.classList.add("cookies-accepted");
+            return;
+          }
+          if (localStorage.getItem("fs_cookie_accepted_v1") === "true") {
+            document.documentElement.classList.add("cookies-resolved", "cookies-accepted");
+            return;
+          }
+          document.documentElement.classList.add("cookie-banner-open");
+        } catch (e) {
+          document.documentElement.classList.add("cookie-banner-open");
         }
-      } catch (e) {}
+      })();
     </script>
 
     <title>Food Safety Study Guide 2026 | SITXFSA005 & SITXFSA006</title>
@@ -39,7 +51,7 @@
     <meta property="og:title" content="Food Safety Study Guide 2026 | SITXFSA005 & SITXFSA006">
     <meta property="og:description" content="Complete food safety study guide for Australian food handlers and Food Safety Supervisors. Temperature, hygiene, allergens, HACCP and more.">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="stylesheet" href="/style.css?v=9">
+    <link rel="stylesheet" href="/style.css?v=13">
 
     <script type="application/ld+json">
     {
@@ -90,6 +102,26 @@
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://food-safety-practice-test-au.com/og-default.png">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://food-safety-practice-test-au.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Study Guide",
+      "item": "https://food-safety-practice-test-au.com/guide.html"
+    }
+  ]
+}
+    </script>
 </head>
 <body>
     <header class="site-header">
@@ -110,7 +142,7 @@
                 <a href="/temperature-danger-zone-checker.html" class="nav-link">Danger Zone Tool</a>
                 <a href="/tips.html" class="nav-link">Exam Tips</a>
                 <a href="/find-a-course.html" class="nav-link">Find a Course</a>
-                <a href="/blog/" class="nav-link">Blog</a>
+                <a href="/blog" class="nav-link">Blog</a>
                 <a href="/flashcards.html" class="nav-link">Flashcards</a>
                 <a href="/glossary.html" class="nav-link">Glossary</a>
                     </nav>
@@ -135,6 +167,9 @@
             </div>
         </div>
     </header>
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><span aria-current="page">Study Guide</span></li></ol></nav>
+    </div>
 
     <main class="container">
         <article class="content-page guide-page">
@@ -157,6 +192,53 @@
                     <a href="topic-high-risk.html" class="topic-link-card"><span class="topic-link-card__nr" aria-hidden="true">12</span> High-Risk Foods & Vulnerable Groups</a>
                 </div>
             </section>
+
+            <section class="guide-section">
+                <h2>How to use this study guide</h2>
+                <p>This guide walks through the twelve knowledge areas assessed in the Australian food safety units <strong>SITXFSA005 (Use hygienic practices for food safety)</strong> and <strong>SITXFSA006 (Participate in safe food handling practices)</strong>. These are the same areas your RTO assessor, employer induction quiz, or council-required course will test. Read each section, then drill the matching topic in the <a href="/">free practice test</a> until you can answer scenario questions without hesitating. Most people who pass first time spend two to four short sessions across a week rather than one long cram &mdash; spacing your practice helps the rules stick.</p>
+                <p>The single most-tested idea on the whole assessment is <strong>temperature control of potentially hazardous food</strong>, followed closely by cross-contamination and personal hygiene. If your time is short, master those three first.</p>
+            </section>
+
+            <section class="guide-section">
+                <h2>The 12 knowledge areas explained</h2>
+
+                <h3>1. Food Standards Code &amp; legislation</h3>
+                <p>Food safety in Australia is governed by the <strong>Food Standards Code</strong>, written by Food Standards Australia New Zealand (FSANZ) and enforced by state and territory authorities and local councils. The parts you need to recognise are <strong>Standard 3.2.2</strong> (food safety practices and general requirements), <strong>Standard 3.2.2A</strong> (food safety management tools, including the requirement for many businesses to have a Food Safety Supervisor and trained food handlers), and <strong>Standard 3.2.3</strong> (food premises and equipment). You are not expected to quote the Code, but you should know that food businesses have a legal duty to handle food safely, that breaches can lead to fines or closure, and that enforcement is carried out by environmental health officers. <a href="topic-food-standards.html">Drill this topic &rarr;</a></p>
+
+                <h3>2. Food handler responsibilities</h3>
+                <p>A food handler is anyone who works with food or food-contact surfaces &mdash; cooking, preparing, serving, packing, displaying or cleaning. Your core duties are to take all reasonable measures not to contaminate food, to report illness and not handle food when sick, to maintain personal cleanliness, and to follow your workplace's food safety procedures. Knowing the difference between your duty and the supervisor's duty is a common exam point: handlers follow the system; the Food Safety Supervisor maintains it. <a href="topic-food-handler.html">Drill this topic &rarr;</a></p>
+
+                <h3>3. Temperature control &amp; the danger zone</h3>
+                <p>The <strong>temperature danger zone is 5&nbsp;&deg;C to 60&nbsp;&deg;C</strong> &mdash; the range in which food-poisoning bacteria multiply fastest. Keep cold food at or below 5&nbsp;&deg;C and hot food at or above 60&nbsp;&deg;C. Cook poultry, minced meat, sausages and stuffed foods to <strong>75&nbsp;&deg;C</strong> in the centre, and reheat food rapidly to <strong>70&nbsp;&deg;C</strong> or hotter. The <strong>2-hour / 4-hour rule</strong> applies to ready-to-eat potentially hazardous food left in the danger zone: under 2 hours total, refrigerate or use; between 2 and 4 hours, use immediately; over 4 hours, throw it out. Always measure with a clean, calibrated probe thermometer, not by touch. <a href="topic-temperature.html">Drill this topic &rarr;</a></p>
+
+                <h3>4. Cross-contamination</h3>
+                <p>Cross-contamination is the transfer of harmful bacteria, allergens or foreign matter from one item to another &mdash; most often from raw food to ready-to-eat food, via hands, equipment or surfaces. Prevent it by separating raw and cooked food, using colour-coded or thoroughly cleaned boards and knives, storing raw meat <em>below</em> ready-to-eat food in the fridge, and washing hands between tasks. There are three types worth knowing: biological (bacteria, viruses), chemical (cleaning agents), and physical (glass, hair, jewellery). <a href="topic-cross-contamination.html">Drill this topic &rarr;</a></p>
+
+                <h3>5. Personal hygiene</h3>
+                <p>Effective handwashing is the highest-value hygiene habit: wash with warm running water and soap, scrub for around 20 seconds, and dry with single-use towel &mdash; before handling food, after handling raw food, after using the toilet, after touching your face or hair, and after taking out rubbish. Other key points: keep fingernails short and clean, cover cuts with a brightly coloured waterproof bandage, tie back hair, avoid handling food when suffering vomiting or diarrhoea, and do not taste food with your fingers or a re-used spoon. <a href="topic-hygiene.html">Drill this topic &rarr;</a></p>
+
+                <h3>6. Cleaning &amp; sanitising</h3>
+                <p>Cleaning and sanitising are two different steps. <strong>Cleaning</strong> removes visible dirt, grease and food residue with detergent and water. <strong>Sanitising</strong> then reduces bacteria to a safe level using heat or a chemical sanitiser. The correct order for a food-contact surface is: pre-clean (scrape), wash, rinse, sanitise, then air-dry. Sanitiser only works on an already-clean surface and needs the correct contact time. Knowing that "clean" and "sanitised" are not the same thing is a frequent exam question. <a href="topic-cleaning.html">Drill this topic &rarr;</a></p>
+
+                <h3>7. Allergen management</h3>
+                <p>Australia recognises a defined list of priority allergens that must be declared: peanuts, tree nuts, milk, egg, wheat (gluten), soy, sesame, fish, crustacea/molluscs, lupin &mdash; and updated labelling rules also require added sulphites to be declared. Even a tiny trace can cause a severe, potentially fatal reaction (anaphylaxis), so allergens cannot be "cooked out". Manage them by giving accurate ingredient information, preventing allergen cross-contact with clean equipment and hands, and never guessing &mdash; if you are unsure whether a dish contains an allergen, find out before serving. <a href="topic-allergens.html">Drill this topic &rarr;</a></p>
+
+                <h3>8. Food storage &amp; labelling</h3>
+                <p>Store food to protect it from contamination and keep it out of the danger zone. Refrigerate at 5&nbsp;&deg;C or below and freeze at &minus;18&nbsp;&deg;C or below; keep raw meat below and away from ready-to-eat food; keep food covered and off the floor. Practise <strong>FIFO</strong> (first in, first out) using use-by and best-before dates &mdash; food past its <em>use-by</em> date must not be sold or served, while <em>best-before</em> relates to quality. Label and date prepared and decanted food, and store chemicals well away from food. <a href="topic-storage.html">Drill this topic &rarr;</a></p>
+
+                <h3>9. Pest control</h3>
+                <p>Pests &mdash; cockroaches, rodents, flies and birds &mdash; spread disease and contaminate food. Prevention is built on denying them food, water and shelter: store food in sealed containers, clean up spills and crumbs promptly, remove rubbish, seal gaps and keep doors and screens closed. Food handlers should know the signs of infestation (droppings, gnaw marks, egg cases) and report them. Pesticides are a chemical contamination hazard and should be applied by licensed pest controllers, never stored near food. <a href="topic-pest-control.html">Drill this topic &rarr;</a></p>
+
+                <h3>10. HACCP &amp; food safety programs</h3>
+                <p>HACCP (Hazard Analysis and Critical Control Points) is the internationally recognised, preventive system many Australian food businesses use to control food safety. Its seven principles run from identifying hazards and critical control points (CCPs) to setting critical limits, monitoring, corrective actions, verification and record-keeping. A <strong>critical control point</strong> is a step where a hazard can be prevented or eliminated &mdash; cooking to 75&nbsp;&deg;C is the classic example. You should understand the idea of monitoring CCPs and taking corrective action when a limit is breached. <a href="topic-haccp.html">Drill this topic &rarr;</a></p>
+
+                <h3>11. Food Safety Supervisor (FSS) duties</h3>
+                <p>A Food Safety Supervisor is the trained person responsible for overseeing food handling on site: making sure procedures are followed, training and guiding staff, monitoring temperatures and records, and acting when something goes wrong. Many food businesses are legally required to have a certified FSS, and the certificate generally must be refreshed every five years. The exam often contrasts the FSS role (maintains the food safety program, has authority to give directions) with the food handler role (follows the program). <a href="topic-fss-duties.html">Drill this topic &rarr;</a></p>
+
+                <h3>12. High-risk foods &amp; vulnerable groups</h3>
+                <p>High-risk or "potentially hazardous" foods support rapid bacterial growth and need temperature control: cooked rice and pasta, meat and poultry, dairy, eggs, seafood, smallgoods, cooked vegetables, and prepared salads. Some groups are far more vulnerable to food poisoning &mdash; the elderly, young children, pregnant women, and people with weakened immune systems &mdash; which is why aged-care, childcare and hospital settings apply extra controls. Knowing which foods are high-risk and who is most at risk is commonly tested. <a href="topic-high-risk.html">Drill this topic &rarr;</a></p>
+            </section>
+
             <section class="guide-section">
                 <h2>Quick reference</h2>
                 <ul>
@@ -244,16 +326,22 @@
         </div>
     </footer>
 
-    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie notice">
+    <div id="cookie-banner-backdrop" class="cookie-banner-backdrop" aria-hidden="true"></div>
+    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-modal="true" aria-labelledby="cookie-banner-title" aria-live="polite">
         <div class="cookie-banner__content">
-            <p>This site uses cookies and similar technologies to improve your experience and support analytics and advertising. By continuing to use this site, you agree to our <a href="/legal.html#privacy">Privacy Policy</a>.</p>
+            <div class="cookie-banner__copy">
+                <p id="cookie-banner-title"><strong>Accept cookies to continue</strong></p>
+                <p class="cookie-banner__sub">We use cookies to keep the site running and to understand how people use our free practice tests. Tap accept to start studying. <a href="/legal.html#privacy">Privacy Policy</a></p>
+            </div>
             <div class="cookie-banner__actions">
-                <button id="cookie-accept" class="btn btn-primary cookie-btn">Accept</button>
+                <button type="button" id="cookie-accept" class="btn btn-primary cookie-btn cookie-btn--accept">Accept &amp; continue</button>
+                <button type="button" id="cookie-deny" class="cookie-banner__reject">Essential cookies only</button>
             </div>
         </div>
     </div>
     <script src="faq-accordion.js" defer></script>
         <script src="cookie-consent.js" defer></script>
     <script src="site-ui.js" defer></script>
+    <script src="/ads.js" defer></script>
 </body>
 </html>

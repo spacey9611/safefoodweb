@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 380" role="img" aria-label="Australian temperature danger zone chart: cold safe below 5 degrees, danger zone 5 to 60 degrees, hot hold safe at 60 degrees and above">
+  <style>
+    .t{font-family:Arial,Helvetica,sans-serif;}
+    .h{font-weight:700;}
+    .lbl{font-size:15px;fill:#fff;font-weight:700;}
+    .sub{font-size:12px;fill:#fff;opacity:.92;}
+    .scale{font-size:13px;fill:#1A1F1C;font-weight:700;}
+    .title{font-size:18px;fill:#1A1F1C;font-weight:700;}
+    .cap{font-size:11px;fill:#5C6760;}
+  </style>
+  <rect width="520" height="380" fill="#FFFFFF"/>
+  <text x="24" y="34" class="t title">Temperature Danger Zone (Australia)</text>
+
+  <!-- bars -->
+  <!-- hot hold safe -->
+  <rect x="150" y="56" width="320" height="74" rx="10" fill="#C2410C"/>
+  <text x="170" y="88" class="t lbl">60&#176;C and above &#8212; Hot-hold SAFE</text>
+  <text x="170" y="110" class="t sub">Keep hot food at 60&#176;C+. Cook to 75&#176;C, reheat to 70&#176;C.</text>
+
+  <!-- danger zone -->
+  <rect x="150" y="140" width="320" height="96" rx="10" fill="#DC2626"/>
+  <text x="170" y="174" class="t lbl">5&#176;C &#8211; 60&#176;C &#8212; DANGER ZONE</text>
+  <text x="170" y="196" class="t sub">Bacteria multiply fastest here.</text>
+  <text x="170" y="214" class="t sub">2-hour / 4-hour rule applies.</text>
+
+  <!-- cold safe -->
+  <rect x="150" y="246" width="320" height="74" rx="10" fill="#1D4ED8"/>
+  <text x="170" y="278" class="t lbl">Below 5&#176;C &#8212; Chilled SAFE</text>
+  <text x="170" y="300" class="t sub">Fridge &#8804;5&#176;C, freezer &#8804;&#8722;18&#176;C.</text>
+
+  <!-- scale markers -->
+  <line x1="120" y1="56" x2="120" y2="320" stroke="#D5DBD6" stroke-width="2"/>
+  <text x="60" y="62" class="t scale">75&#176;C</text>
+  <text x="68" y="146" class="t scale">60&#176;C</text>
+  <text x="76" y="252" class="t scale">5&#176;C</text>
+  <text x="60" y="324" class="t scale">&#8722;18&#176;C</text>
+  <circle cx="120" cy="56" r="4" fill="#C2410C"/>
+  <circle cx="120" cy="140" r="4" fill="#DC2626"/>
+  <circle cx="120" cy="246" r="4" fill="#1D4ED8"/>
+  <circle cx="120" cy="320" r="4" fill="#1D4ED8"/>
+
+  <text x="24" y="352" class="t cap">food-safety-practice-test-au.com &#183; aligned with the Food Standards Code</text>
+</svg>

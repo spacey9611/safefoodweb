@@ -21,25 +21,37 @@
       gtag('js', new Date());
       gtag('config', 'G-N69BCEQGQ2');
     </script>
-    <script>
-      try {
-        if (localStorage.getItem("fs_cookie_accepted_v1") === "true") {
-          document.documentElement.classList.add("cookies-accepted");
+<script>
+      (function () {
+        try {
+          var c = localStorage.getItem("fs_cookie_consent_v2");
+          if (c === "accepted" || c === "denied") {
+            document.documentElement.classList.add("cookies-resolved");
+            if (c === "accepted") document.documentElement.classList.add("cookies-accepted");
+            return;
+          }
+          if (localStorage.getItem("fs_cookie_accepted_v1") === "true") {
+            document.documentElement.classList.add("cookies-resolved", "cookies-accepted");
+            return;
+          }
+          document.documentElement.classList.add("cookie-banner-open");
+        } catch (e) {
+          document.documentElement.classList.add("cookie-banner-open");
         }
-      } catch (e) {}
+      })();
     </script>
 
     <title>Free Food Safety Practice Test NSW 2026 | SITXFSA005</title>
-    <meta name="description" content="Free food safety practice test for New South Wales (NSW). 650 SITXFSA005 questions with instant feedback. No sign-up required.">
+    <meta name="description" content="Free NSW food safety practice test: 650 SITXFSA005 & FSS questions aligned with NSW Food Authority rules. Instant feedback, no sign-up required.">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Food Safety Practice AU">
     <link rel="canonical" href="https://food-safety-practice-test-au.com/food-safety-nsw.html">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://food-safety-practice-test-au.com/food-safety-nsw.html">
     <meta property="og:title" content="Free Food Safety Practice Test NSW 2026 | SITXFSA005">
-    <meta property="og:description" content="Free food safety practice test for New South Wales. 650 questions aligned with NSW Food Authority. Prepare for SITXFSA005 food handler or FSS certification.">
+    <meta property="og:description" content="Free NSW food safety practice test: 650 SITXFSA005 & FSS questions aligned with NSW Food Authority rules. Instant feedback, no sign-up required.">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="stylesheet" href="/style.css?v=9">
+    <link rel="stylesheet" href="/style.css?v=13">
     <meta name="state" content="nsw">
     <script type="application/ld+json">
 {
@@ -94,6 +106,26 @@
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://food-safety-practice-test-au.com/og-default.png">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://food-safety-practice-test-au.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Food Safety New South Wales",
+      "item": "https://food-safety-practice-test-au.com/food-safety-nsw.html"
+    }
+  ]
+}
+    </script>
 </head>
 <body>
     <header class="site-header">
@@ -114,7 +146,7 @@
                 <a href="/temperature-danger-zone-checker.html" class="nav-link">Danger Zone Tool</a>
                 <a href="/tips.html" class="nav-link">Exam Tips</a>
                 <a href="/find-a-course.html" class="nav-link">Find a Course</a>
-                <a href="/blog/" class="nav-link">Blog</a>
+                <a href="/blog" class="nav-link">Blog</a>
                 <a href="/flashcards.html" class="nav-link">Flashcards</a>
                 <a href="/glossary.html" class="nav-link">Glossary</a>
                     </nav>
@@ -139,11 +171,14 @@
             </div>
         </div>
     </header>
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><span aria-current="page">Food Safety New South Wales</span></li></ol></nav>
+    </div>
 
     <section class="home-editorial-hero" aria-labelledby="state-hero-title">
         <div class="container home-editorial-hero__inner">
             <p class="home-editorial-hero__badge">NSW · NSW Food Authority</p>
-            <h1 id="state-hero-title" class="home-editorial-hero__title">Food Safety Practice Test<br><span class="home-editorial-hero__accent">New South Wales (NSW)</span></h1>
+            <h1 id="state-hero-title" class="home-editorial-hero__title">Food Safety Practice Test <br><span class="home-editorial-hero__accent">New South Wales (NSW)</span></h1>
             <ul class="home-editorial-hero__list">
                 <li><strong>650+</strong> exam-style questions (40 per attempt)</li>
                 <li>Aligned with <strong>NSW Food Authority</strong> requirements</li>
@@ -191,6 +226,10 @@
                 <div class="state-fact"><div class="state-fact__label">FSS validity</div><div class="state-fact__val">5 years</div></div>
                 <div class="state-fact"><div class="state-fact__label">Standout rule</div><div class="state-fact__val">Both units, one approved RTO (Sep 2025)</div></div>
             </div>
+                        <h3>Who needs food safety training in NSW?</h3>
+            <p>In New South Wales the rules are stricter than the national baseline. Class 1 businesses (those serving food to vulnerable people, such as hospitals and aged-care kitchens) and Class 2 businesses (most cafés, restaurants, pubs, takeaways and caterers) must have a trained Food Safety Supervisor who is reasonably available to staff at all times the business handles food. Every other food handler must have skills and knowledge appropriate to their role &mdash; the exact ground this practice test covers. The biggest NSW-specific point to remember for 2026 is the September 2025 change requiring both SITXFSA005 and SITXFSA006 to be completed with the <em>same</em> NSW Food Authority&ndash;approved RTO.</p>
+            <h3>Registering a food business in NSW</h3>
+            <p>Most food businesses notify their local council before they start trading, and the council carries out inspections under the Food Act 2003 (NSW). Higher-risk operations and certain licensable activities may also deal directly with the NSW Food Authority. If you are opening a venue, confirm your class and whether you need a documented food safety program early, because it shapes your supervisor and record-keeping obligations.</p>
             <div class="ad-slot" data-ad-slot="state-incontent" role="complementary" aria-label="Advertisement"><span class="ad-slot__label">Advertisement</span></div>
             <h3>NSW Food Safety FAQ</h3>
             <dl>
@@ -236,16 +275,22 @@
         </div>
     </footer>
 
-    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie notice">
+    <div id="cookie-banner-backdrop" class="cookie-banner-backdrop" aria-hidden="true"></div>
+    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-modal="true" aria-labelledby="cookie-banner-title" aria-live="polite">
         <div class="cookie-banner__content">
-            <p>This site uses cookies and similar technologies to improve your experience and support analytics and advertising. By continuing to use this site, you agree to our <a href="/legal.html#privacy">Privacy Policy</a>.</p>
+            <div class="cookie-banner__copy">
+                <p id="cookie-banner-title"><strong>Accept cookies to continue</strong></p>
+                <p class="cookie-banner__sub">We use cookies to keep the site running and to understand how people use our free practice tests. Tap accept to start studying. <a href="/legal.html#privacy">Privacy Policy</a></p>
+            </div>
             <div class="cookie-banner__actions">
-                <button id="cookie-accept" class="btn btn-primary cookie-btn">Accept</button>
+                <button type="button" id="cookie-accept" class="btn btn-primary cookie-btn cookie-btn--accept">Accept &amp; continue</button>
+                <button type="button" id="cookie-deny" class="cookie-banner__reject">Essential cookies only</button>
             </div>
         </div>
     </div>
     <script src="faq-accordion.js" defer></script>
     <script src="cookie-consent.js" defer></script>
     <script type="module" src="script.js"></script>
+    <script src="/ads.js" defer></script>
 </body>
 </html>

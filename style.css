@@ -929,9 +929,11 @@ body.nav-menu-open {
     line-height: 1.45;
 }
 
-body.has-cookie-banner,
-html:not(.cookies-accepted) body {
-    padding-bottom: calc(112px + env(safe-area-inset-bottom, 0px));
+html.cookie-banner-open,
+html.cookie-banner-open body {
+    overflow: hidden;
+    height: 100%;
+    touch-action: none;
 }
 
 /* ==========================================================================
@@ -2190,12 +2192,24 @@ dl { margin: 0; }
 /* ==========================================================================
    COOKIE BANNER
    ========================================================================== */
+.cookie-banner-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    background: rgba(14, 18, 16, 0.78);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+}
+html.cookies-resolved .cookie-banner-backdrop,
+html.cookies-resolved .cookie-banner {
+    display: none !important;
+}
 .cookie-banner {
     position: fixed;
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 1000;
+    z-index: 1001;
     background: linear-gradient(180deg, var(--ink-2) 0%, var(--ink) 100%);
     color: #E7ECE8;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -2205,7 +2219,8 @@ dl { margin: 0; }
     padding: 0 env(safe-area-inset-right, 0) env(safe-area-inset-bottom, 0) env(safe-area-inset-left, 0);
     animation: cookieSlideUp 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
-html.cookies-accepted .cookie-banner {
+html.cookies-accepted .cookie-banner,
+html.cookies-accepted .cookie-banner-backdrop {
     display: none !important;
 }
 @keyframes cookieSlideUp {
@@ -2216,18 +2231,30 @@ html.cookies-accepted .cookie-banner {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 14px 18px;
-    padding: 16px 20px;
+    gap: 16px 24px;
+    padding: 18px 20px;
     width: 100%;
     max-width: min(1280px, 100%);
     margin: 0 auto;
 }
-.cookie-banner__content p {
+.cookie-banner__copy {
+    flex: 1 1 260px;
+    min-width: 0;
+}
+.cookie-banner__copy p {
     color: #C9CDD6;
     font-size: .9rem;
     line-height: 1.5;
-    flex: 1 1 280px;
     margin: 0;
+}
+.cookie-banner__copy #cookie-banner-title {
+    color: #fff;
+    font-size: 1.05rem;
+    margin-bottom: 6px;
+}
+.cookie-banner__sub {
+    font-size: .86rem !important;
+    color: #A8B0BC !important;
 }
 .cookie-banner__content a {
     color: #6EE7B7;
@@ -2236,15 +2263,51 @@ html.cookies-accepted .cookie-banner {
     text-underline-offset: 2px;
 }
 .cookie-banner__content a:hover { color: #fff; }
-.cookie-banner__actions { flex: 0 0 auto; }
+.cookie-banner__actions {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    min-width: min(100%, 220px);
+}
 .cookie-btn {
-    padding: 12px 28px;
-    font-size: .92rem;
+    padding: 14px 28px;
+    font-size: 1rem;
+    font-weight: 700;
     white-space: nowrap;
+    width: 100%;
+}
+.cookie-btn--accept {
+    box-shadow: 0 4px 18px rgba(5, 150, 105, 0.45);
+    letter-spacing: 0.01em;
+}
+.cookie-btn--accept:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 22px rgba(5, 150, 105, 0.55);
+}
+.cookie-banner__reject {
+    background: none;
+    border: none;
+    padding: 6px 4px;
+    margin: 0 auto;
+    font-size: .78rem;
+    color: rgba(255, 255, 255, 0.45);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    cursor: pointer;
+    font-family: inherit;
+    line-height: 1.4;
+}
+.cookie-banner__reject:hover {
+    color: rgba(255, 255, 255, 0.72);
 }
 @media (min-width: 761px) {
     .cookie-banner__content {
-        padding: 18px 24px;
+        padding: 20px 28px;
+    }
+    .cookie-banner__actions {
+        min-width: 200px;
     }
 }
 
@@ -3350,6 +3413,62 @@ body.is-quiz-active #result-screen.active {
 [data-theme="dark"] .rule-result--ok { background:#11233F; color:#93C5FD; }
 [data-theme="dark"] .rule-result--use { background:#3A2A14; color:#FDBA74; }
 [data-theme="dark"] .rule-result--bin { background:#3A1414; color:#FCA5A5; }
+
+/* Horizontal scroll wrapper for wide tables on small screens */
+.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 4px 0 8px; }
+.table-scroll .cook-table { min-width: 560px; }
+
+/* Breadcrumbs (visible, mirrors BreadcrumbList schema) */
+.breadcrumbs { padding: 12px 0 0; }
+.breadcrumbs ol { list-style: none; display: flex; flex-wrap: wrap; align-items: center; gap: 6px; padding: 0; margin: 0; font-size: .8rem; }
+.breadcrumbs li { display: flex; align-items: center; gap: 6px; color: var(--muted); }
+.breadcrumbs li + li::before { content: "\203A"; color: var(--muted-2); }
+.breadcrumbs a { color: var(--muted); text-decoration: none; }
+.breadcrumbs a:hover { color: var(--hv-deep); text-decoration: underline; }
+.breadcrumbs [aria-current="page"] { color: var(--text); font-weight: 600; }
+
+/* Trust strip (factual product signals under the hero) */
+.trust-strip {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 12px;
+    margin: 0 auto 6px;
+    padding: 0;
+}
+.trust-strip li {
+    font-size: .86rem;
+    color: var(--muted);
+    background: var(--surface);
+    border: 1px solid var(--line-2);
+    border-radius: var(--r-pill);
+    padding: 7px 14px;
+    box-shadow: var(--sh-sm);
+}
+.trust-strip li strong { color: var(--hv-deep); }
+[data-theme="dark"] .trust-strip li strong { color: #34D399; }
+
+/* Content diagrams (SVG infographics) */
+.content-figure { margin: 22px 0; }
+.content-figure img {
+    display: block;
+    width: 100%;
+    max-width: 560px;
+    height: auto;
+    margin: 0 auto;
+    border: 1px solid var(--line);
+    border-radius: var(--r);
+    background: var(--surface);
+    box-shadow: var(--sh-sm);
+}
+.content-figure figcaption {
+    font-size: .82rem;
+    color: var(--muted);
+    text-align: center;
+    margin-top: 8px;
+}
+[data-theme="dark"] .content-figure img { background: #fff; }
 
 /* ── LIGHT-MODE BUTTON CONTRAST ────────────────────────────────────────
    In the default (light) theme, white/surface buttons on a near-white page
