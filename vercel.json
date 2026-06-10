@@ -4,9 +4,15 @@
   "trailingSlash": false,
   "redirects": [
     {
-      "source": "/:path*",
+      "source": "/",
       "has": [{ "type": "host", "value": "www.food-safety-practice-test-au.com" }],
-      "destination": "https://food-safety-practice-test-au.com/:path*",
+      "destination": "https://food-safety-practice-test-au.com/",
+      "permanent": true
+    },
+    {
+      "source": "/:path+",
+      "has": [{ "type": "host", "value": "www.food-safety-practice-test-au.com" }],
+      "destination": "https://food-safety-practice-test-au.com/:path+",
       "permanent": true
     },
     { "source": "/index.html", "destination": "/", "permanent": true },
